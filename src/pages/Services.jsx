@@ -1,0 +1,25 @@
+import React from "react";
+import usePageTitle from "../hooks/usePageTitle";
+import PageHeader from "../components/common/PageHeader";
+import ServicesList from "../components/services/ServicesList";
+import CallToAction from "../components/common/CallToAction";
+
+const Services = () => {
+  usePageTitle(
+    "Services",
+    "Explore Elite Construction's residential, commercial, renovation, interior design, architecture, and project management services."
+  );
+
+  return (
+    <div>
+      <PageHeader
+        title="Our Services"
+        subtitle="Comprehensive construction solutions tailored to your vision."
+      />
+      <ServicesList />
+      <CallToAction />
+    </div>
+  );
+};
+
+export default Services;
