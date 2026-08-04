@@ -4,7 +4,6 @@ import PageHeader from "../components/common/PageHeader";
 import OurStory from "../components/about/OurStory";
 import MissionVision from "../components/about/MissionVision";
 import CoreValues from "../components/about/CoreValues";
-import CallToAction from "../components/common/CallToAction";
 
 const About = () => {
   usePageTitle(
@@ -21,7 +20,7 @@ const About = () => {
       <OurStory />
       <MissionVision />
       <CoreValues />
-      <CallToAction />
+    
     </div>
   );
 };

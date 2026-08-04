@@ -10,7 +10,7 @@ import companyValues from "../../data/companyValues";
  */
 const CoreValues = () => {
   return (
-    <section className="py-20 bg-light">
+    <section className="py-20 bg-light dark:bg-dark">
       <Container>
         <SectionHeading
           eyebrow="What Drives Us"
@@ -19,16 +19,16 @@ const CoreValues = () => {
           centered
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
-          {companyValues.map((value) => (
-            <IconFeatureCard
-              key={value.id}
-              icon={value.icon}
-              title={value.title}
-              description={value.description}
-            />
-          ))}
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
+  {companyValues.map((value) => (
+    <IconFeatureCard
+      key={value.id}
+      icon={value.icon}
+      title={value.title}
+      description={value.description}
+    />
+  ))}
+</div>
       </Container>
     </section>
   );

@@ -1,22 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import navLinks from "../../data/navLinks";
 import services from "../../data/services";
+import socialLinks from "../../data/socialLinks";
 import Logo from "../common/Logo";
 
-/**
- * Site-wide Footer: company info, quick links, services list,
- * newsletter signup, and social icons.
- */
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -33,7 +22,6 @@ const Footer = () => {
     <footer className="bg-dark text-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Company Info */}
           <div>
             <Logo light />
             <p className="text-gray-400 text-sm mt-4 leading-relaxed">
@@ -42,22 +30,19 @@ const Footer = () => {
               residential or commercial.
             </p>
             <div className="flex gap-4 mt-5">
-              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map(
-                (Icon, index) => (
-                  <a
-                    key={index}
-                    href="/"
-                    aria-label="Social media link"
-                    className="w-9 h-9 flex items-center justify-center rounded-full bg-dark-light text-light hover:bg-primary hover:text-dark transition-colors duration-200"
-                  >
-                    <Icon size={14} />
-                  </a>
-                )
-              )}
+              {socialLinks.map(({ name, icon: Icon, url }) => (
+                <a
+                  key={name}
+                  href={url}
+                  aria-label={name}
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-dark-light text-light hover:bg-primary hover:text-dark transition-colors duration-200"
+                >
+                  <Icon size={14} />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -74,7 +59,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services — now sourced from the shared services.js data file */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
@@ -91,7 +75,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter + Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Stay Updated</h4>
             <p className="text-gray-400 text-sm mb-4">
@@ -136,7 +119,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-dark-light mt-12 pt-6 text-center text-gray-500 text-sm">
           © {new Date().getFullYear()} Elite Construction. All rights reserved.
         </div>

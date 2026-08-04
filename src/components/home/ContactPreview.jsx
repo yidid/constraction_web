@@ -3,12 +3,11 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa"
 import Container from "../ui/Container";
 import SectionHeading from "../common/SectionHeading";
 import Button from "../ui/Button";
+import ContactMap from "../contact/ContactMap";
 
 /**
  * Home page section combining quick company contact info with a minimal
- * inline contact form. Intentionally lighter-weight than the full Contact
- * page (Step 14) — this is a fast, low-friction option for visitors who
- * don't want to navigate away from the Home page for a simple message.
+ * inline contact form and map preview.
  */
 const ContactPreview = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -20,13 +19,12 @@ const ContactPreview = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder behavior until backend/email integration is connected.
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section className="py-20 bg-light">
+    <section className="py-20 bg-light dark:bg-dark transition-colors duration-200">
       <Container>
         <SectionHeading
           eyebrow="Get In Touch"
@@ -35,50 +33,51 @@ const ContactPreview = () => {
           centered
         />
 
+        {/* Info & Form Row */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mt-14">
           {/* Contact info column */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-dark shrink-0">
-                <FaMapMarkerAlt className="text-primary" />
+              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-primary text-white shrink-0">
+                <FaMapMarkerAlt className="text-lg" />
               </div>
               <div>
-                <p className="font-semibold text-dark">Office Address</p>
-                <p className="text-gray-500 text-sm mt-1">
+                <p className="font-semibold text-dark dark:text-light">Office Address</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                   123 Builder Ave, Addis Ababa, Ethiopia
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-dark shrink-0">
-                <FaPhoneAlt className="text-primary" />
+              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-primary text-white shrink-0">
+                <FaPhoneAlt className="text-lg" />
               </div>
               <div>
-                <p className="font-semibold text-dark">Phone Number</p>
-                <p className="text-gray-500 text-sm mt-1">+251 900 000 000</p>
+                <p className="font-semibold text-dark dark:text-light">Phone Number</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">+251 900 000 000</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-dark shrink-0">
-                <FaEnvelope className="text-primary" />
+              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-primary text-white shrink-0">
+                <FaEnvelope className="text-lg" />
               </div>
               <div>
-                <p className="font-semibold text-dark">Email Address</p>
-                <p className="text-gray-500 text-sm mt-1">
-                  info@eliteconstruction.com
+                <p className="font-semibold text-dark dark:text-light">Email Address</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+                  nafcon22@gmail.com
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-dark shrink-0">
-                <FaClock className="text-primary" />
+              <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-primary text-white shrink-0">
+                <FaClock className="text-lg" />
               </div>
               <div>
-                <p className="font-semibold text-dark">Working Hours</p>
-                <p className="text-gray-500 text-sm mt-1">
+                <p className="font-semibold text-dark dark:text-light">Working Hours</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                   Mon – Sat: 8:00 AM – 6:00 PM
                 </p>
               </div>
@@ -86,15 +85,14 @@ const ContactPreview = () => {
           </div>
 
           {/* Minimal form column */}
-          <div className="lg:col-span-3 bg-light-off rounded-lg p-8">
+          <div className="lg:col-span-3 bg-light-off dark:bg-dark-light rounded-lg p-8 transition-colors duration-200">
             {submitted ? (
               <div className="text-center py-10">
-                <p className="text-xl font-bold text-dark">
+                <p className="text-xl font-bold text-dark dark:text-light">
                   Thank you for reaching out!
                 </p>
-                <p className="text-gray-500 mt-2">
-                  We've received your message and will respond within one
-                  business day.
+                <p className="text-gray-500 dark:text-gray-300 mt-2">
+                  We've received your message and will respond within one business day.
                 </p>
               </div>
             ) : (
@@ -107,7 +105,7 @@ const ContactPreview = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-dark"
+                    className="w-full px-4 py-3 rounded-md border border-gray-200 dark:border-dark bg-light dark:bg-dark text-dark dark:text-light placeholder-gray-400 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <input
                     type="email"
@@ -116,7 +114,7 @@ const ContactPreview = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Your Email"
-                    className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-dark"
+                    className="w-full px-4 py-3 rounded-md border border-gray-200 dark:border-dark bg-light dark:bg-dark text-dark dark:text-light placeholder-gray-400 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
 
@@ -127,7 +125,7 @@ const ContactPreview = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell us briefly about your project..."
-                  className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-dark resize-none"
+                  className="w-full px-4 py-3 rounded-md border border-gray-200 dark:border-dark bg-light dark:bg-dark text-dark dark:text-light placeholder-gray-400 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                 />
 
                 <Button type="submit" variant="primary">
@@ -136,6 +134,11 @@ const ContactPreview = () => {
               </form>
             )}
           </div>
+        </div>
+
+        {/* Embedded Map Section */}
+        <div className="mt-12 rounded-lg overflow-hidden border border-gray-200 dark:border-dark-light">
+          <ContactMap />
         </div>
       </Container>
     </section>

@@ -9,7 +9,7 @@ import SectionHeading from "../common/SectionHeading";
  */
 const OurStory = () => {
   return (
-    <section className="py-20 bg-light">
+    <section className="py-20 bg-light dark:bg-dark">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <img
@@ -24,7 +24,7 @@ const OurStory = () => {
               heading="Nearly Two Decades of Building Excellence"
               subtext="Elite Construction was founded in 2005 by a small team of engineers who believed construction should be defined by craftsmanship and honesty, not just square footage. What started as a two-person residential outfit has grown into a full-service construction company serving both residential and commercial clients across Ethiopia."
             />
-            <p className="text-gray-500 mt-5 leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-300 mt-5 leading-relaxed">
               Today, our team of 45+ professionals spans architecture,
               project management, interior design, and skilled trades —
               but our founding principle remains unchanged: build every

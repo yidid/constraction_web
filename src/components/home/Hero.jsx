@@ -3,8 +3,7 @@ import Button from "../ui/Button";
 
 /**
  * Full-viewport-height Hero section for the Home page.
- * Sits behind the transparent Navbar (see Navbar.jsx scroll logic from Step 4).
- * Uses an Unsplash placeholder image as the background until a real photo is supplied.
+ * Sits behind the transparent Navbar.
  */
 const Hero = () => {
   return (
@@ -16,34 +15,40 @@ const Hero = () => {
       }}
     >
       {/* Dark gradient overlay for text readability over the photo */}
-      <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/70 to-dark/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-900/50" />
 
       {/* Content sits above the overlay via relative + z-10 */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl animate-fadeInUp">
-          <span className="inline-block bg-primary text-dark text-xs font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-6">
-            Trusted Since 2005
+          
+          {/* Badge: Sky Blue fill + Dark text for high contrast */}
+          <span className="inline-block bg-primary-light text-slate-950 text-xs font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-6 shadow-sm">
+            Trusted Since 2010
           </span>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-light leading-tight">
-            Building Your Vision,{" "}
-            <span className="text-primary">One Brick at a Time</span>
+          {/* Heading: Pure White text with Sky Blue highlight */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+            Solid grounds,{" "}
+            <br />
+            <span className="text-primary-light">Sharp execution</span>
           </h1>
 
-          <p className="text-gray-300 text-lg mt-6 max-w-lg leading-relaxed">
-            NAF Construction delivers residential and commercial projects
-            with precision, integrity, and craftsmanship you can trust from
-            groundbreaking to final walkthrough.
+          {/* Body Paragraph */}
+          <p className="text-slate-200 text-lg mt-6 max-w-lg leading-relaxed">
+            Bridging the gap between premium material sourcing and masterful architectural execution. 
+            We translate sophisticated designs into high-end, permanent realities through rigorous field management and absolute geometric precision.
           </p>
 
+          {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 mt-9">
             <Button to="/contact" variant="primary">
-              Get a Free Quote
+              Contact Us
             </Button>
             <Button to="/portfolio" variant="outline">
               View Our Work
             </Button>
           </div>
+
         </div>
       </div>
     </section>

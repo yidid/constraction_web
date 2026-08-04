@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-dark bg-light antialiased transition-colors duration-300;
+  }
+
+  /* Dark mode base surface + text color for the whole document */
+  html.dark body {
+    @apply bg-dark text-light;
+  }
+}

@@ -9,16 +9,16 @@ import { FaStar, FaQuoteLeft } from "react-icons/fa";
 const TestimonialSlide = ({ name, role, avatar, rating, quote }) => {
   return (
     <div className="w-full shrink-0 px-4">
-      <div className="max-w-2xl mx-auto bg-light rounded-lg shadow-lg p-10 text-center">
-        <FaQuoteLeft className="text-primary text-3xl mx-auto mb-6" />
+      <div className="max-w-2xl mx-auto bg-light dark:bg-dark-light rounded-lg shadow-lg p-10 text-center">
+        <FaQuoteLeft className="text-primary dark:text-primary-light text-3xl mx-auto mb-6" />
 
-        <p className="text-dark text-lg leading-relaxed italic">"{quote}"</p>
+        <p className="text-dark dark:text-light text-lg leading-relaxed italic">"{quote}"</p>
 
         <div className="flex justify-center gap-1 mt-6">
           {Array.from({ length: 5 }).map((_, i) => (
             <FaStar
               key={i}
-              className={i < rating ? "text-primary" : "text-gray-300"}
+              className={i < rating ? "text-primary dark:text-primary-light" : "text-gray-300"}
               size={16}
             />
           ))}
@@ -31,8 +31,8 @@ const TestimonialSlide = ({ name, role, avatar, rating, quote }) => {
             className="w-12 h-12 rounded-full object-cover"
           />
           <div className="text-left">
-            <p className="font-bold text-dark">{name}</p>
-            <p className="text-gray-500 text-sm">{role}</p>
+            <p className="font-bold text-dark dark:text-light">{name}</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">{role}</p>
           </div>
         </div>
       </div>

@@ -316,38 +316,52 @@ const projects = [
       "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
     ],
   },
+ {
+  id: "ethiopian-investment-holding-headquarter-renovation",
+  title: "Ethiopian Investment Holding Headquarter Office Renovation",
+  category: "renovation",
+  client: "Ethiopian Investment Holding",
+  image: "/assets/images/IEH/EIH1.jpg",
+  location: "Addis Ababa (Mexico), Ethiopia",
+  year: "2022",
+  description:
+    "Corporate headquarter remodeling encompassing gypsum partitions, plastering, internal paint, glazed partitions, vanity works, and carpet flooring.",
+  featured: false,
+  gallery: [
+    "/assets/images/IEH/EIH1.jpg",
+    "/assets/images/IEH/EIH2.jpg",
+    "/assets/images/IEH/EIH3.jpg",
+    "/assets/images/IEH/EIH4.jpg",
+    "/assets/images/IEH/EIH5.jpg",
+    "/assets/images/IEH/EIH6.jpg",
+    "/assets/images/IEH/EIH7.jpg",
+    "/assets/images/IEH/EIH8.jpg",
+    "/assets/images/IEH/EIH9.jpg",
+    "/assets/images/IEH/EIH10.jpg",
+  ],
+},
   {
-    id: "ethiopian-investment-holding-headquarter-renovation",
-    title: "Ethiopian Investment Holding Headquarter Office Renovation",
-    category: "renovation",
-    client: "Ethiopian Investment Holding",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80",
-    location: "Addis Ababa (Mexico), Ethiopia",
-    year: "2022",
-    description:
-      "Corporate headquarter remodeling encompassing gypsum partitions, plastering, internal paint, glazed partitions, vanity works, and carpet flooring.",
-    featured: false,
-    gallery: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  {
-    id: "ministry-of-finance-tax-policy-office-renovation",
-    title: "Ministry of Finance Tax Policy & Law Office Renovation",
-    category: "renovation",
-    client: "Minister of Finance",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
-    location: "Addis Ababa (Sidist Kilo), Ethiopia",
-    year: "2022",
-    description:
-      "Modernization of Tax Policy & Law Office and VIP café/dining with gypsum partitions, painting, carpet tiling, and porcelain floor/wall tiling.",
-    featured: false,
-    gallery: [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
+  id: "ministry-of-finance-tax-policy-office-renovation",
+  title: "Ministry of Finance Tax Policy & Law Office Renovation",
+  category: "renovation",
+  client: "Minister of Finance",
+  image: "../../assets/images/MOF/mof1.jpg",
+  location: "Addis Ababa (Sidist Kilo), Ethiopia",
+  year: "2022",
+  description:
+    "Modernization of Tax Policy & Law Office and VIP café/dining with gypsum partitions, painting, carpet tiling, and porcelain floor/wall tiling.",
+  featured: false,
+  gallery: [
+ "/assets/images/MOF/mof1.jpg",
+    "/assets/images/MOF/mof2.jpg",
+    "/assets/images/MOF/mof3.jpg",
+    "/assets/images/MOF/mof4.jpg",
+    "/assets/images/MOF/mof5.jpg",
+    "/assets/images/MOF/mof6.jpg",
+    "/assets/images/MOF/mof7.jpg",
+    
+  ],
+},
   {
     id: "watershed-development-support-project",
     title: "Watershed Development Support Project",

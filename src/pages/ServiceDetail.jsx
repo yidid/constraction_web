@@ -3,7 +3,6 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import usePageTitle from "../hooks/usePageTitle";
 import Container from "../components/ui/Container";
-import CallToAction from "../components/common/CallToAction";
 import services from "../data/services";
 
 /**
@@ -91,7 +90,7 @@ const ServiceDetail = () => {
         </section>
       )}
 
-      <CallToAction />
+    
     </div>
   );
 };

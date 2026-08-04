@@ -19,7 +19,7 @@ const PageHeader = ({ title, subtitle }) => {
     .replace("-", " ");
 
   return (
-    <section className="bg-dark pt-32 pb-16">
+    <section className="bg-dark  pt-32 pb-16">
       <Container>
         <h1 className="text-3xl sm:text-4xl font-bold text-light capitalize">
           {title}

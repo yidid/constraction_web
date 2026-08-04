@@ -2,7 +2,6 @@ import React from "react";
 import usePageTitle from "../hooks/usePageTitle";
 import PageHeader from "../components/common/PageHeader";
 import TeamSection from "../components/team/TeamSection";
-import CallToAction from "../components/common/CallToAction";
 
 const Team = () => {
   usePageTitle(
@@ -17,7 +16,7 @@ const Team = () => {
         subtitle="The experienced professionals behind every successful project."
       />
       <TeamSection />
-      <CallToAction />
+     
     </div>
   );
 };

@@ -18,7 +18,7 @@ const ProjectCard = ({ title, category, image }) => {
 
       {/* Overlay: mostly transparent by default, darkens and reveals content on hover */}
       <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent flex flex-col justify-end p-6">
-        <span className="text-primary text-xs font-bold uppercase tracking-wider mb-1 capitalize">
+        <span className="text-primary dark:text-primary-light text-xs font-bold uppercase tracking-wider mb-1 capitalize">
           {category}
         </span>
         <h3 className="text-light text-xl font-bold">{title}</h3>

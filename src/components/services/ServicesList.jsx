@@ -10,7 +10,7 @@ import services from "../../data/services";
  */
 const ServicesList = () => {
   return (
-    <section className="py-20 bg-light">
+    <section className="py-20 bg-light dark:bg-dark">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (

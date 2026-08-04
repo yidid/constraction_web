@@ -12,17 +12,17 @@ import { FaArrowRight } from "react-icons/fa";
  */
 const ServiceCard = ({ icon: Icon, title, shortDescription }) => {
   return (
-    <div className="group bg-light-off rounded-lg p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-      <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-dark group-hover:bg-primary transition-colors duration-300">
-        <Icon className="text-primary group-hover:text-dark text-2xl transition-colors duration-300" />
+    <div className="group bg-slate-100 dark:bg-dark-light rounded-lg p-8   transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-primary dark:bg-light group-hover:bg-primary-light transition-colors duration-300">
+        <Icon className="text-white dark:text-primary group-hover:text-light text-2xl transition-colors duration-300" />
       </div>
 
-      <h3 className="text-xl font-bold text-dark mt-6">{title}</h3>
-      <p className="text-gray-500 mt-3 leading-relaxed">{shortDescription}</p>
+      <h3 className="text-xl font-bold text-dark dark:text-light mt-6">{title}</h3>
+      <p className="text-gray-500 dark:text-gray-300 mt-3 leading-relaxed">{shortDescription}</p>
 
       <Link
         to="/services"
-        className="inline-flex items-center gap-2 text-primary font-semibold text-sm mt-5 hover:gap-3 transition-all duration-200"
+        className="inline-flex items-center gap-2 text-primary dark:text-primary-light font-semibold text-sm mt-5 hover:gap-3 transition-all duration-200"
       >
         Learn More <FaArrowRight size={12} />
       </Link>

@@ -2,7 +2,6 @@ import React from "react";
 import usePageTitle from "../hooks/usePageTitle";
 import PageHeader from "../components/common/PageHeader";
 import PortfolioGrid from "../components/portfolio/PortfolioGrid";
-import CallToAction from "../components/common/CallToAction";
 
 const Portfolio = () => {
   usePageTitle(
@@ -17,7 +16,7 @@ const Portfolio = () => {
         subtitle="A showcase of projects we're proud to have built."
       />
       <PortfolioGrid />
-      <CallToAction />
+     
     </div>
   );
 };

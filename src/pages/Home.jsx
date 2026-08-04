@@ -7,7 +7,6 @@ import WhyChooseUs from "../components/home/WhyChooseUs";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import StatsSection from "../components/home/StatsSection";
 import TestimonialsSection from "../components/home/TestimonialsSection";
-import CallToAction from "../components/common/CallToAction";
 import ContactPreview from "../components/home/ContactPreview";
 import FadeIn from "../components/common/FadeIn";
 
@@ -45,9 +44,7 @@ const Home = () => {
         <TestimonialsSection />
       </FadeIn>
 
-      <FadeIn>
-        <CallToAction />
-      </FadeIn>
+     
 
       <FadeIn>
         <ContactPreview />

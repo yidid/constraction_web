@@ -10,7 +10,7 @@ import whyChooseUs from "../../data/whyChooseUs";
  */
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-light">
+    <section className="py-20 bg-light dark:bg-dark">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* Text column */}
@@ -26,14 +26,14 @@ const WhyChooseUs = () => {
                 const Icon = reason.icon;
                 return (
                   <div key={reason.id} className="flex gap-5">
-                    <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-dark">
-                      <Icon className="text-primary text-xl" />
+                    <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-primary dark:bg-light">
+                      <Icon className="text-white dark:text-primary group-hover:text-light text-xl transition-colors duration-300" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-dark">
+                      <h3 className="text-lg font-bold text-dark dark:text-light">
                         {reason.title}
                       </h3>
-                      <p className="text-gray-500 mt-1.5 leading-relaxed">
+                      <p className="text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">
                         {reason.description}
                       </p>
                     </div>

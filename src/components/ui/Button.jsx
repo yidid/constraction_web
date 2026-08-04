@@ -25,7 +25,7 @@ const Button = ({
 
   const variants = {
     primary:
-      "bg-primary text-dark hover:bg-primary-light shadow-md hover:shadow-lg",
+      "bg-primary text-white hover:bg-primary-light shadow-md hover:shadow-lg",
     outline:
       "border-2 border-light text-light hover:bg-light hover:text-dark",
     dark:

@@ -12,7 +12,7 @@ const StatItem = ({ value, suffix, label, startCounting }) => {
 
   return (
     <div className="text-center">
-      <p className="text-4xl sm:text-5xl font-bold text-primary">
+      <p className="text-4xl sm:text-5xl font-bold text-primary-light">
         {count}
         {suffix}
       </p>

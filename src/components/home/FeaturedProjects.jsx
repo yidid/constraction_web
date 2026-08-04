@@ -15,7 +15,7 @@ const FeaturedProjects = () => {
   const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
 
   return (
-    <section className="py-20 bg-light-off">
+    <section className="py-20 bg-light-off dark:bg-dark">
       <Container>
         <SectionHeading
           eyebrow="Our Work"

@@ -12,7 +12,7 @@ import introFeatures from "../../data/features";
  */
 const CompanyIntro = () => {
   return (
-    <section className="py-20 bg-light">
+    <section className="py-20 bg-light dark:bg-dark">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image column */}
@@ -39,7 +39,7 @@ const CompanyIntro = () => {
               {introFeatures.map((feature) => (
                 <li key={feature} className="flex items-center gap-3">
                   <FaCheckCircle className="text-primary text-lg shrink-0" />
-                  <span className="text-dark">{feature}</span>
+                  <span className="text-gray-600 dark:text-gray-400">{feature}</span>
                 </li>
               ))}
             </ul>

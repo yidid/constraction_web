@@ -3,7 +3,6 @@ import usePageTitle from "../hooks/usePageTitle";
 import PageHeader from "../components/common/PageHeader";
 import RatingSummary from "../components/testimonials/RatingSummary";
 import TestimonialsGrid from "../components/testimonials/TestimonialsGrid";
-import CallToAction from "../components/common/CallToAction";
 
 const Testimonials = () => {
   usePageTitle(
@@ -19,7 +18,7 @@ const Testimonials = () => {
       />
       <RatingSummary />
       <TestimonialsGrid />
-      <CallToAction />
+   
     </div>
   );
 };

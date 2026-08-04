@@ -19,7 +19,7 @@ const StatsSection = () => {
       className="relative py-20 bg-dark bg-cover bg-center bg-fixed"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(26,26,26,0.9), rgba(26,26,26,0.9)), url('https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=1600&q=80')",
+          "linear-gradient(rgba(24, 31, 88, 0.9), rgba(26,26,26,0.9)), url('https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=1600&q=80')",
       }}
     >
       <Container>

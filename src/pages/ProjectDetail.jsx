@@ -4,7 +4,6 @@ import { FaArrowLeft, FaMapMarkerAlt, FaCalendarAlt, FaLayerGroup } from "react-
 import usePageTitle from "../hooks/usePageTitle";
 import Container from "../components/ui/Container";
 import ProjectGallery from "../components/portfolio/ProjectGallery";
-import CallToAction from "../components/common/CallToAction";
 import projects from "../data/projects";
 
 /**
@@ -70,7 +69,7 @@ const ProjectDetail = () => {
         </Container>
       </section>
 
-      <CallToAction />
+    
     </div>
   );
 };

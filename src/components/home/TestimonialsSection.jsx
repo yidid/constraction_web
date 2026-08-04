@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
   );
 
   return (
-    <section className="py-20 bg-light-off">
+    <section className="py-20 bg-light-off dark:bg-dark">
       <Container>
         <SectionHeading
           eyebrow="Client Feedback"

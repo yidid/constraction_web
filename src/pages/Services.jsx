@@ -2,7 +2,6 @@ import React from "react";
 import usePageTitle from "../hooks/usePageTitle";
 import PageHeader from "../components/common/PageHeader";
 import ServicesList from "../components/services/ServicesList";
-import CallToAction from "../components/common/CallToAction";
 
 const Services = () => {
   usePageTitle(
@@ -17,7 +16,7 @@ const Services = () => {
         subtitle="Comprehensive construction solutions tailored to your vision."
       />
       <ServicesList />
-      <CallToAction />
+    
     </div>
   );
 };
