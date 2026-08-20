@@ -289,6 +289,7 @@ const projects = [
     title: "Chaka Project Perimeter Fence Construction",
     category: "commercial",
     client: "Addis Ababa Road Authority",
+    
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80",
     location: "Addis Ababa (Jiffara), Ethiopia",

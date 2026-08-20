@@ -6,6 +6,7 @@ import OurServices from "../components/home/OurServices";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import StatsSection from "../components/home/StatsSection";
+import OurClients from "../components/home/OurClients";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import ContactPreview from "../components/home/ContactPreview";
 import FadeIn from "../components/common/FadeIn";
@@ -39,6 +40,11 @@ const Home = () => {
 
       {/* StatsSection already animates its own numbers on scroll (Step 7f) — no FadeIn needed */}
       <StatsSection />
+
+          <FadeIn>
+        <OurClients />
+      </FadeIn>
+
 
       <FadeIn>
         <TestimonialsSection />
