@@ -31,7 +31,7 @@ const ProjectDetail = () => {
 
   return (
     <div>
-      <section className="bg-dark pt-32 pb-16">
+      <section className="bg-navy dark:bg-dark pt-24 pb-16">
         <Container>
           <Link
             to="/portfolio"
@@ -43,7 +43,9 @@ const ProjectDetail = () => {
           <h1 className="text-3xl sm:text-4xl font-bold text-light">
             {project.title}
           </h1>
-
+  <p className="text-gray-300 dark:text-gray-400 text-lg pt-5 leading-relaxed max-w-4xl mb-12">
+            {project.description}
+          </p>
           <div className="flex flex-wrap gap-6 mt-5 text-gray-300 text-sm">
             <span className="flex items-center gap-2">
               <FaLayerGroup className="text-primary" />
@@ -61,13 +63,11 @@ const ProjectDetail = () => {
         </Container>
       </section>
 
-      <section className="py-16 bg-light">
+      <section className="py-10 bg-light dark:bg-dark">
         <Container>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-12">
-            {project.description}
-          </p>
+        
 
-          <h2 className="text-2xl font-bold text-dark mb-6">
+          <h2 className="text-2xl font-bold text-dark dark:text-light mb-6">
             Project Gallery
           </h2>
           <ProjectGallery images={project.gallery} />

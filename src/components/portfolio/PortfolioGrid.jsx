@@ -12,7 +12,7 @@ import useProjects from "../../hooks/useProjects";
  */
 const PortfolioGrid = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const { projects } = useProjects();
+  const { projects, loading, error } = useProjects();
 
   // useMemo avoids recalculating the filtered list on every render unless
   // the category or underlying project data actually changes.
@@ -29,7 +29,13 @@ const PortfolioGrid = () => {
           onChange={setActiveCategory}
         />
 
-        {filteredProjects.length > 0 ? (
+        {loading ? (
+          <p className="mt-16 text-center text-gray-500">Loading projects...</p>
+        ) : error ? (
+          <p role="alert" className="mt-16 text-center text-red-600">
+            {error}
+          </p>
+        ) : filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {filteredProjects.map((project) => (
               <PortfolioCard
@@ -37,7 +43,7 @@ const PortfolioGrid = () => {
                 id={project.id}
                 title={project.title}
                 category={project.category}
-                image={project.image}
+                image2={project.image2}
                 location={project.location}
                 year={project.year}
               />

@@ -21,7 +21,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
         isTransparent
           ? "bg-transparent"
-          : "bg-dark/95 shadow-sm backdrop-blur-md"
+          : "bg-navy shadow-sm backdrop-blur-md dark:bg-dark"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,7 +62,7 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center gap-2">
             <ThemeToggle />
             <button
-              className="text-light text-3xl focus:outline-none p-1"
+              className="text-light text-3xl p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle navigation menu"
             >
@@ -73,7 +73,7 @@ const Navbar = () => {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-dark border-t border-dark-light">
+        <div className="lg:hidden bg-navy border-t border-navy-light dark:bg-dark dark:border-dark-light">
           <ul className="flex flex-col px-4 py-2 gap-1">
             {navLinks.map((link) => (
               <li key={link.path}>

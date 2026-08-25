@@ -1,27 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
 import Container from "../ui/Container";
 import SectionHeading from "../common/SectionHeading";
 import Button from "../ui/Button";
 import ContactMap from "../contact/ContactMap";
+import useContactForm from "../../hooks/useContactForm";
 
 /**
  * Home page section combining quick company contact info with a minimal
  * inline contact form and map preview.
  */
 const ContactPreview = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-  };
+  const { formData, submitted, sending, error, handleChange, handleSubmit } =
+    useContactForm();
 
   return (
     <section className="py-20 bg-light dark:bg-dark transition-colors duration-200">
@@ -128,9 +119,14 @@ const ContactPreview = () => {
                   className="w-full px-4 py-3 rounded-md border border-gray-200 dark:border-dark bg-light dark:bg-dark text-dark dark:text-light placeholder-gray-400 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                 />
 
-                <Button type="submit" variant="primary">
-                  Send Message
+                <Button type="submit" variant="primary" disabled={sending}>
+                  {sending ? "Sending..." : "Send Message"}
                 </Button>
+                {error && (
+                  <p role="alert" className="text-sm text-red-600">
+                    {error}
+                  </p>
+                )}
               </form>
             )}
           </div>

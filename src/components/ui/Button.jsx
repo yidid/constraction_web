@@ -19,9 +19,10 @@ const Button = ({
   onClick,
   type = "button",
   className = "",
+  disabled = false,
 }) => {
   const baseStyles =
-    "inline-block px-7 py-3.5 rounded-sm font-display font-bold text-sm tracking-wide transition-all duration-200 hover:-translate-y-0.5";
+    "inline-flex items-center justify-center px-7 py-3.5 rounded-sm font-display font-bold text-sm tracking-wide transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:-translate-y-0.5";
 
   const variants = {
     primary:
@@ -43,7 +44,12 @@ const Button = ({
   }
 
   return (
-    <button type={type} onClick={onClick} className={combinedStyles}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={combinedStyles}
+    >
       {children}
     </button>
   );

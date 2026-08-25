@@ -7,14 +7,14 @@ import { FaArrowRight } from "react-icons/fa";
  * ProjectCard (image zoom + hover overlay), but links to the project's
  * own detail page and also shows year/location for extra context.
  */
-const PortfolioCard = ({ id, title, category, image, location, year }) => {
+const PortfolioCard = ({ id, title, category, image2, location, year }) => {
   return (
     <Link
       to={`/portfolio/${id}`}
-      className="group relative overflow-hidden shadow-lg block aspect-[4/3]"
+      className="group relative block aspect-[4/3] overflow-hidden rounded-card bg-dark shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2"
     >
       <img
-        src={image}
+        src={image2}
         alt={title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       />
@@ -27,7 +27,7 @@ const PortfolioCard = ({ id, title, category, image, location, year }) => {
         <p className="text-gray-200 text-base mt-1">{location}</p>
 
         <div className="flex items-center gap-2 text-light text-sm font-semibold mt-3 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-          View Details <FaArrowRight size={12} />
+          View Details <FaArrowRight aria-hidden="true" size={12} />
         </div>
       </div>
     </Link>

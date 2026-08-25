@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 /**
@@ -7,28 +8,29 @@ import { FaArrowRight } from "react-icons/fa";
  * revealing the category and a "View Project" link.
  * Used in the Home page Featured Projects section and the Portfolio page.
  */
-const ProjectCard = ({ title, category, image }) => {
+const ProjectCard = ({ id, title, category, image }) => {
   return (
-    <div className="group relative overflow-hidden shadow-lg cursor-pointer aspect-[4/3]">
+    <Link
+      to={`/portfolio/${id}`}
+      className="group relative block aspect-[4/3] overflow-hidden rounded-card bg-dark shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2"
+    >
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        loading="lazy"
+        className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
       />
 
-      {/* Overlay: mostly transparent by default, darkens and reveals content on hover */}
-      <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/25 to-transparent flex flex-col justify-end p-6">
-        <span className="text-primary-light text-xs font-bold uppercase tracking-[0.16em] mb-2 capitalize">
+      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-dark/95 via-dark/25 to-transparent p-6">
+        <span className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-primary-light">
           {category}
         </span>
-        <h3 className="text-light text-xl font-bold">{title}</h3>
-
-        {/* "View Project" link: hidden by default, fades/slides in on hover */}
-        <div className="flex items-center gap-2 text-light text-sm font-semibold mt-2 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-          View Project <FaArrowRight size={12} />
-        </div>
+        <h3 className="text-xl font-bold text-light">{title}</h3>
+        <span className="mt-2 flex items-center gap-2 text-sm font-semibold text-light opacity-0 -translate-y-2 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          View Project <FaArrowRight aria-hidden="true" size={12} />
+        </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

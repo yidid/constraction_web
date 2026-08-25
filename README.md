@@ -9,6 +9,14 @@
 
 The importer writes all records from `src/data/projects.js` to the `projects` collection. Existing document IDs are preserved, so running the importer again updates those records instead of creating duplicates. The Firebase web configuration is safe to include in the client, but Firestore security rules should restrict write access before deploying.
 
+## Contact Form EmailJS Setup
+
+1. Create an EmailJS service and email template at [emailjs.com](https://www.emailjs.com/).
+2. Copy `.env.example` to `.env` if you have not already done so.
+3. Set `REACT_APP_EMAILJS_SERVICE_ID`, `REACT_APP_EMAILJS_TEMPLATE_ID`, and `REACT_APP_EMAILJS_PUBLIC_KEY` using the values from EmailJS.
+4. Configure the template variables as `name`, `email`, `phone`, `serviceType`, and `message`.
+5. Restart `npm start` after changing `.env`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

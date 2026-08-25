@@ -22,13 +22,23 @@ module.exports = {
           dark: "#154884",
         },
         dark: {
-          DEFAULT: "#011b3e",
-          light: "#072755",
+          DEFAULT: "#0B1220",
+          light: "#162338",
+        },
+        navy: {
+          DEFAULT: "#0B2A48",
+          light: "#1A4D7A",
         },
         light: {
           DEFAULT: "#FFFFFF",
           off: "#F1F5F9",
         },
+      },
+      borderRadius: {
+        card: "0.375rem",
+      },
+      boxShadow: {
+        card: "0 12px 32px rgba(1, 27, 62, 0.12)",
       },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],

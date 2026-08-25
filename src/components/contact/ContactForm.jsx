@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../ui/Button";
-import useContactForm from "../../hooks/useContactForm";
 import services from "../../data/services";
 
 /**
@@ -9,8 +8,21 @@ import services from "../../data/services";
  * message in place of the form after submission.
  */
 const ContactForm = () => {
-  const { formData, submitted, handleChange, handleSubmit, resetForm } =
-    useContactForm();
+  const initialState = { name: "", email: "", phone: "", serviceType: "", message: "" };
+  const [formData, setFormData] = useState(initialState);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setFormData(initialState);
+  };
+
+  const resetForm = () => setSubmitted(false);
 
   if (submitted) {
     return (

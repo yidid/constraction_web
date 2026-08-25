@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-import localProjects from "../data/projects";
 import { getProjects } from "../services/projectService";
 
 function useProjects() {
-  const [projects, setProjects] = useState(localProjects);
+  const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     let active = true;
 
     getProjects()
       .then((firebaseProjects) => {
-        if (active && firebaseProjects.length > 0) {
-          setProjects(firebaseProjects);
-        }
+        if (active) setProjects(firebaseProjects);
       })
-      .catch(() => {
-        // Keep the local catalog available when Firebase is unavailable.
+      .catch((firebaseError) => {
+        if (active) {
+          setError(firebaseError.message || "Unable to load projects from Firebase.");
+        }
       })
       .finally(() => {
         if (active) setLoading(false);
@@ -27,7 +27,7 @@ function useProjects() {
     };
   }, []);
 
-  return { projects, loading };
+  return { projects, loading, error };
 }
 
 export default useProjects;

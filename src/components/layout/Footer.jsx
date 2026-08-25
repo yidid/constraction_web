@@ -1,41 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import navLinks from "../../data/navLinks";
-import services from "../../data/services";
 import socialLinks from "../../data/socialLinks";
 import Logo from "../common/Logo";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    if (email.trim() !== "") {
-      setSubscribed(true);
-      setEmail("");
-    }
-  };
-
   return (
-    <footer className="bg-dark text-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-navy text-light dark:bg-dark">
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.5fr_1fr_1.2fr] md:gap-16">
           <div>
             <Logo light />
-            <p className="text-gray-400 text-sm mt-4 leading-relaxed">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-200">
               Building strong foundations and lasting relationships. Elite
               Construction delivers quality craftsmanship on every project,
               residential or commercial.
             </p>
-            <div className="flex gap-4 mt-5">
+            <div className="mt-5 flex gap-3">
               {socialLinks.map(({ name, icon: Icon, url }) => (
                 <a
                   key={name}
                   href={url}
                   aria-label={name}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-dark-light text-light hover:bg-primary hover:text-dark transition-colors duration-200"
+                  className="flex h-9 w-9 items-center justify-center rounded-full text-gray-200 transition-colors duration-200 hover:bg-primary hover:text-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 focus-visible:ring-offset-navy dark:focus-visible:ring-offset-dark"
                 >
                   <Icon size={14} />
                 </a>
@@ -44,13 +32,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="mb-4 text-base font-semibold">Quick Links</h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 text-sm hover:text-primary transition-colors duration-200"
+                    className="text-sm text-gray-200 transition-colors duration-200 hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light"
                   >
                     {link.name}
                   </Link>
@@ -60,49 +48,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.id}>
-                  <Link
-                    to="/services"
-                    className="text-gray-400 text-sm hover:text-primary transition-colors duration-200"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Stay Updated</h4>
-            <p className="text-gray-400 text-sm mb-4">
-              Subscribe for project updates and construction tips.
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex mb-6">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
-                className="w-full px-3 py-2 text-sm rounded-l-md bg-dark-light text-light placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary"
-              />
-              <button
-                type="submit"
-                className="bg-primary text-dark font-semibold px-4 rounded-r-md hover:bg-primary-light transition-colors duration-200 text-sm"
-              >
-                Join
-              </button>
-            </form>
-            {subscribed && (
-              <p className="text-primary text-xs mb-4">
-                Thanks for subscribing!
-              </p>
-            )}
-
-            <ul className="space-y-2 text-sm text-gray-400">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.16em] text-primary-light">
+              Contact
+            </h4>
+            <ul className="space-y-3 text-sm text-gray-200">
               <li className="flex items-center gap-2">
                 <FaMapMarkerAlt className="text-primary shrink-0" />
                 123 Builder Ave, Addis Ababa, Ethiopia
@@ -119,8 +68,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-dark-light mt-12 pt-6 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} Elite Construction. All rights reserved.
+        <div className="mt-10 flex flex-col gap-3 border-t border-navy-light pt-5 text-sm text-gray-300 dark:border-dark-light sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} NAF Construction.</span>
+          
         </div>
       </div>
     </footer>
