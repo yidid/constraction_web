@@ -1,5 +1,14 @@
 # Getting Started with Create React App
 
+## Import Projects Into Firestore
+
+1. Create a Firebase Web app and enable Firestore Database in the Firebase console.
+2. Copy `.env.example` to `.env` and replace each value with the Firebase config from Project settings.
+3. Start the app with `npm start`.
+4. Open `http://localhost:3000/setup/projects` and select **Import projects**.
+
+The importer writes all records from `src/data/projects.js` to the `projects` collection. Existing document IDs are preserved, so running the importer again updates those records instead of creating duplicates. The Firebase web configuration is safe to include in the client, but Firestore security rules should restrict write access before deploying.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,40 +1,54 @@
 import React from "react";
 import Container from "../ui/Container";
 import SectionHeading from "../common/SectionHeading";
-import clients from "../../data/clients";
+import useProjects from "../../hooks/useProjects";
 
-/**
- * Home page trust section showing client/partner logos in a responsive
- * grid. Logos render in grayscale by default and switch to full color
- * on hover — keeps the row visually uniform at rest while still
- * signaling these are distinct, real brands.
- */
+
 const OurClients = () => {
+  const { projects } = useProjects();
+  const marqueeList = [...projects, ...projects, ...projects];
+
   return (
-    <section className="py-16 bg-light dark:bg-dark border-y border-gray-100 dark:border-gray-800">
+    <section className="py-16 bg-white border-y border-gray-100 overflow-hidden select-none">
       <Container>
         <SectionHeading
           eyebrow="Trusted By"
           heading="Companies We've Worked With"
           centered
         />
+      </Container>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center mt-12">
-          {clients.map((client) => (
+      {/* Marquee with smooth side fade masks */}
+      <div className="relative mt-12 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+        <div className="flex w-max gap-16 animate-[marqueeLeft_35s_linear_infinite] hover:[animation-play-state:paused]">
+          {marqueeList.map((project, index) => (
             <div
-              key={client.id}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              key={`${project.id}-${index}`}
+          
+              className="flex items-center justify-center h-28 w-56 px-4 shrink-0 bg-transparent active:bg-transparent focus:bg-transparent"
             >
               <img
-                src={client.logo}
-                alt={client.name}
+                src={project.image}
+                alt={project.title || "Client Logo"}
                 loading="lazy"
-                className="max-h-12 w-auto object-contain"
+             
+                className="h-full w-full max-h-24 max-w-full object-contain pointer-events-none"
               />
             </div>
           ))}
         </div>
-      </Container>
+      </div>
+
+      <style>{`
+        @keyframes marqueeLeft {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+      `}</style>
     </section>
   );
 };

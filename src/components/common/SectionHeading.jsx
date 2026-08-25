@@ -4,7 +4,8 @@ const SectionHeading = ({ eyebrow, heading, subtext, centered = false }) => {
   return (
     <div className={`max-w-2xl ${centered ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
-        <span className="inline-block text-primary-light font-semibold text-sm uppercase tracking-wider mb-3">
+        <span className="inline-flex items-center gap-3 text-primary dark:text-primary-light font-bold text-xs uppercase tracking-[0.18em] mb-4">
+          <span className="w-8 h-px bg-primary" aria-hidden="true" />
           {eyebrow}
         </span>
       )}
@@ -12,7 +13,7 @@ const SectionHeading = ({ eyebrow, heading, subtext, centered = false }) => {
         {heading}
       </h2>
       {subtext && (
-        <p className="text-gray-500 dark:text-gray-300 mt-4 leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg mt-4 leading-relaxed">
           {subtext}
         </p>
       )}

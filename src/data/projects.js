@@ -273,8 +273,7 @@ const projects = [
     title: "Sorga Resort",
     category: "commercial",
     client: "Prime Minister's Office",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
+    image:"/assets/images/clients/Prime Minister’s office.jpg",
     location: "Nekemt, Oromia, Ethiopia",
     year: "2023",
     description:
@@ -290,8 +289,8 @@ const projects = [
     category: "commercial",
     client: "Addis Ababa Road Authority",
     
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80",
+    image:"/assets/images/clients/eih.jpg",
+
     location: "Addis Ababa (Jiffara), Ethiopia",
     year: "2023",
     description:
@@ -306,8 +305,7 @@ const projects = [
     title: "African Leadership Excellence Academy Admin Block Renovation",
     category: "renovation",
     client: "African Leadership Excellence Academy",
-    image:
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80",
+    image:"/assets/images/clients/African Leadership Excellence Academy Administration Block Renovation.jpg",
     location: "Sululta, Oromia, Ethiopia",
     year: "2022",
     description:
@@ -322,7 +320,7 @@ const projects = [
   title: "Ethiopian Investment Holding Headquarter Office Renovation",
   category: "renovation",
   client: "Ethiopian Investment Holding",
-  image: "/assets/images/IEH/EIH1.jpg",
+  image: "/assets/images/clients/eih.jpg",
   location: "Addis Ababa (Mexico), Ethiopia",
   year: "2022",
   description:
@@ -346,7 +344,7 @@ const projects = [
   title: "Ministry of Finance Tax Policy & Law Office Renovation",
   category: "renovation",
   client: "Minister of Finance",
-  image: "../../assets/images/MOF/mof1.jpg",
+  image: "./assets/images/clients/Minister of Finance.png",
   location: "Addis Ababa (Sidist Kilo), Ethiopia",
   year: "2022",
   description:
@@ -369,7 +367,7 @@ const projects = [
     category: "commercial",
     client: "Adeda Energies",
     image:
-      "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=900&q=80",
+      "./assets/images/clients/Adeda Energies.png",
     location: "Addis Ababa (Ras Mekonnen Bridge), Ethiopia",
     year: "2022",
     description:

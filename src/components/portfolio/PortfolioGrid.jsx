@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import Container from "../ui/Container";
 import CategoryFilter from "./CategoryFilter";
 import PortfolioCard from "./PortfolioCard";
-import projects from "../../data/projects";
+import useProjects from "../../hooks/useProjects";
 
 /**
  * Portfolio page's main section: category filter tabs + a responsive
@@ -12,13 +12,14 @@ import projects from "../../data/projects";
  */
 const PortfolioGrid = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const { projects } = useProjects();
 
   // useMemo avoids recalculating the filtered list on every render unless
   // the category or underlying project data actually changes.
   const filteredProjects = useMemo(() => {
     if (activeCategory === "all") return projects;
     return projects.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+  }, [activeCategory, projects]);
 
   return (
     <section className="py-20 bg-light">

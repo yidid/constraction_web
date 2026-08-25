@@ -4,7 +4,7 @@ import { FaArrowLeft, FaMapMarkerAlt, FaCalendarAlt, FaLayerGroup } from "react-
 import usePageTitle from "../hooks/usePageTitle";
 import Container from "../components/ui/Container";
 import ProjectGallery from "../components/portfolio/ProjectGallery";
-import projects from "../data/projects";
+import useProjects from "../hooks/useProjects";
 
 /**
  * Dynamic route rendering full detail for a single project, based on the
@@ -13,12 +13,17 @@ import projects from "../data/projects";
  */
 const ProjectDetail = () => {
   const { projectId } = useParams();
+  const { projects, loading } = useProjects();
   const project = projects.find((p) => p.id === projectId);
 
   usePageTitle(
     project ? project.title : "Project Not Found",
     project ? project.description : ""
   );
+
+  if (loading) {
+    return <div className="py-32 text-center">Loading project...</div>;
+  }
 
   if (!project) {
     return <Navigate to="/404" replace />;

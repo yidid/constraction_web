@@ -3,12 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --surface-paper: #f7f8f6;
+    --surface-ink: #071b2f;
+    --line-subtle: rgba(7, 27, 47, 0.12);
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply font-sans text-dark bg-light antialiased transition-colors duration-300;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    background-image: linear-gradient(rgba(7, 27, 47, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7, 27, 47, 0.025) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    letter-spacing: 0;
+  }
+
+  button, a {
+    font-family: inherit;
+  }
+
+  ::selection {
+    @apply bg-primary text-light;
   }
 
   /* Dark mode base surface + text color for the whole document */

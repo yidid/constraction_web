@@ -22,12 +22,12 @@ const Hero = () => {
         <div className="max-w-2xl animate-fadeInUp">
           
           {/* Badge: Sky Blue fill + Dark text for high contrast */}
-          <span className="inline-block bg-primary-light text-slate-950 text-xs font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-6 shadow-sm">
+          <span className="inline-flex items-center gap-2 border-l-2 border-primary-light bg-dark/50 text-slate-100 text-xs font-bold tracking-[0.18em] uppercase px-4 py-2 mb-6">
             Trusted Since 2010
           </span>
 
           {/* Heading: Pure White text with Sky Blue highlight */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08]">
             Solid grounds,{" "}
             <br />
             <span className="text-primary-light">Sharp execution</span>

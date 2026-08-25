@@ -9,7 +9,7 @@ import { FaArrowRight } from "react-icons/fa";
  */
 const ProjectCard = ({ title, category, image }) => {
   return (
-    <div className="group relative rounded-lg overflow-hidden shadow-lg cursor-pointer h-80">
+    <div className="group relative overflow-hidden shadow-lg cursor-pointer aspect-[4/3]">
       <img
         src={image}
         alt={title}
@@ -17,8 +17,8 @@ const ProjectCard = ({ title, category, image }) => {
       />
 
       {/* Overlay: mostly transparent by default, darkens and reveals content on hover */}
-      <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent flex flex-col justify-end p-6">
-        <span className="text-primary dark:text-primary-light text-xs font-bold uppercase tracking-wider mb-1 capitalize">
+      <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/25 to-transparent flex flex-col justify-end p-6">
+        <span className="text-primary-light text-xs font-bold uppercase tracking-[0.16em] mb-2 capitalize">
           {category}
         </span>
         <h3 className="text-light text-xl font-bold">{title}</h3>

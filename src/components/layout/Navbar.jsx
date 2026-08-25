@@ -19,7 +19,9 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        isTransparent ? "bg-transparent" : "bg-dark shadow-sm"
+        isTransparent
+          ? "bg-transparent"
+          : "bg-dark/95 shadow-sm backdrop-blur-md"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,10 +35,10 @@ const Navbar = () => {
                   to={link.path}
                   end={link.path === "/"}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-colors duration-200 pb-1 border-b-2 whitespace-nowrap ${
+                      `text-sm font-semibold transition-colors duration-200 pb-2 border-b whitespace-nowrap ${
                       isActive
                         ? "text-primary-light border-primary"
-                        : "text-light border-transparent hover:text-primary"
+                        : "text-light border-transparent hover:text-primary-light"
                     }`
                   }
                 >
@@ -50,7 +52,7 @@ const Navbar = () => {
             <ThemeToggle />
             <NavLink
               to="/contact"
-              className="bg-primary text-light font-semibold px-4 xl:px-5 py-2.5 rounded-md hover:bg-primary-light transition-colors duration-200 whitespace-nowrap text-sm"
+              className="bg-primary text-light font-display font-bold px-4 xl:px-5 py-2.5 rounded-sm hover:bg-primary-light transition-colors duration-200 whitespace-nowrap text-sm"
             >
               Get a Quote
             </NavLink>
@@ -80,8 +82,8 @@ const Navbar = () => {
                   end={link.path === "/"}
                   onClick={closeMobileMenu}
                   className={({ isActive }) =>
-                    `block text-base font-medium py-3.5 ${
-                      isActive ? "text-primary" : "text-light hover:text-primary"
+                    `block text-base font-semibold py-3.5 ${
+                      isActive ? "text-primary-light" : "text-light hover:text-primary-light"
                     }`
                   }
                 >
@@ -93,7 +95,7 @@ const Navbar = () => {
               <NavLink
                 to="/contact"
                 onClick={closeMobileMenu}
-                className="block text-center bg-primary text-dark font-semibold px-5 py-3.5 rounded-md"
+                className="block text-center bg-primary text-light font-display font-bold px-5 py-3.5 rounded-sm"
               >
                 Get a Quote
               </NavLink>

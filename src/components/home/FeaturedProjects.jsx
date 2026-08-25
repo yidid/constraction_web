@@ -3,7 +3,7 @@ import Container from "../ui/Container";
 import SectionHeading from "../common/SectionHeading";
 import ProjectCard from "./ProjectCard";
 import Button from "../ui/Button";
-import projects from "../../data/projects";
+import useProjects from "../../hooks/useProjects";
 
 /**
  * Home page section previewing a handful of featured projects.
@@ -12,6 +12,7 @@ import projects from "../../data/projects";
  * the full Portfolio page (Step 10).
  */
 const FeaturedProjects = () => {
+  const { projects } = useProjects();
   const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
 
   return (

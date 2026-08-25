@@ -21,13 +21,13 @@ const Button = ({
   className = "",
 }) => {
   const baseStyles =
-    "inline-block px-7 py-3.5 rounded-md font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5";
+    "inline-block px-7 py-3.5 rounded-sm font-display font-bold text-sm tracking-wide transition-all duration-200 hover:-translate-y-0.5";
 
   const variants = {
     primary:
       "bg-primary text-white hover:bg-primary-light shadow-md hover:shadow-lg",
     outline:
-      "border-2 border-light text-light hover:bg-light hover:text-dark",
+      "border border-light/70 text-light hover:bg-light hover:text-dark",
     dark:
       "bg-dark text-light hover:bg-dark-light shadow-md hover:shadow-lg",
   };
