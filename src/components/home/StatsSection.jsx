@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../ui/Container";
 import StatItem from "./StatItem";
 import useOnScreen from "../../hooks/useOnScreen";
-import stats from "../../data/stats";
+import { getCompanyStats } from "../../services/statsService";
 
 /**
  * Dark banner section showing 4 key company statistics, animated with a
@@ -12,6 +12,31 @@ import stats from "../../data/stats";
  */
 const StatsSection = () => {
   const [sectionRef, isVisible] = useOnScreen({ threshold: 0.3 });
+  const [stats, setStats] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadStats() {
+      const profile = await getCompanyStats();
+
+      if (isMounted) {
+        const yearsOfExperience = Math.max(0, new Date().getFullYear() - (profile.foundedYear ?? 2005));
+
+        setStats([
+          { id: "years", value: yearsOfExperience, suffix: "+", label: "Years of Experience" },
+          { id: "projects", value: profile.projects ?? 250, suffix: "+", label: "Projects Completed" },
+          { id: "clients", value: profile.clients ?? 180, suffix: "+", label: "Happy Clients" },
+          { id: "team", value: profile.team ?? 45, suffix: "+", label: "Team Members" },
+        ]);
+      }
+    }
+
+    loadStats();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <section

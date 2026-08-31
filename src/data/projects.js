@@ -382,8 +382,7 @@ const projects = [
     title: "Summit Residential G+3 Fit Out",
     category: "residential",
     client: "Private Client",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+    image: "",
     location: "Addis Ababa (Summit), Ethiopia",
     year: "2022",
     description:
@@ -398,8 +397,7 @@ const projects = [
     title: "G+2 Residential Building",
     category: "residential",
     client: "Private Client",
-    image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80",
+    image: "",
     location: "Addis Ababa (Gerji), Ethiopia",
     year: "2021",
     description:

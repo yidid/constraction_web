@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../ui/Container";
 import TestimonialCard from "./TestimonialCard";
-import testimonials from "../../data/testimonials";
+import useTestimonials from "../../hooks/useTestimonials";
 
 /**
  * Responsive grid displaying every client testimonial, letting visitors
@@ -9,6 +9,8 @@ import testimonials from "../../data/testimonials";
  * which spotlights one at a time in a compact space).
  */
 const TestimonialsGrid = () => {
+  const { testimonials } = useTestimonials();
+
   return (
     <section className="py-20 bg-light">
       <Container>

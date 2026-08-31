@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../ui/Button";
 import services from "../../data/services";
+import useContactForm from "../../hooks/useContactForm";
 
 /**
  * Full Contact page form: name, email, phone, service type (populated
@@ -8,21 +9,15 @@ import services from "../../data/services";
  * message in place of the form after submission.
  */
 const ContactForm = () => {
-  const initialState = { name: "", email: "", phone: "", serviceType: "", message: "" };
-  const [formData, setFormData] = useState(initialState);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setFormData(initialState);
-  };
-
-  const resetForm = () => setSubmitted(false);
+  const {
+    formData,
+    submitted,
+    sending,
+    error,
+    handleChange,
+    handleSubmit,
+    resetForm,
+  } = useContactForm();
 
   if (submitted) {
     return (
@@ -99,9 +94,19 @@ const ContactForm = () => {
         className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-dark resize-none"
       />
 
-      <Button type="submit" variant="primary" className="w-full sm:w-auto">
-        Send Message
+      <Button
+        type="submit"
+        variant="primary"
+        className="w-full sm:w-auto"
+        disabled={sending}
+      >
+        {sending ? "Sending..." : "Send Message"}
       </Button>
+      {error && (
+        <p role="alert" className="text-sm text-red-600">
+          {error}
+        </p>
+      )}
     </form>
   );
 };

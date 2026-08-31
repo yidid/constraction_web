@@ -4,7 +4,7 @@ import Container from "../ui/Container";
 import SectionHeading from "../common/SectionHeading";
 import TestimonialSlide from "./TestimonialSlide";
 import useCarousel from "../../hooks/useCarousel";
-import testimonials from "../../data/testimonials";
+import useTestimonials from "../../hooks/useTestimonials";
 
 /**
  * Home page Testimonials carousel. Slides auto-advance every 6 seconds,
@@ -13,6 +13,7 @@ import testimonials from "../../data/testimonials";
  * rather than conditionally rendering slides, for a smooth transition.
  */
 const TestimonialsSection = () => {
+  const { testimonials } = useTestimonials();
   const { currentIndex, goToSlide, goNext, goPrev } = useCarousel(
     testimonials.length,
     6000

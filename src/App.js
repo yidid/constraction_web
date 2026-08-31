@@ -14,6 +14,8 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import SeedProjects from "./pages/SeedProjects";
+import SeedTeam from "./pages/SeedTeam";
+import SeedStats from "./pages/SeedStats";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/setup/projects" element={<SeedProjects />} />
+          <Route path="/setup/team" element={<SeedTeam />} />
+          <Route path="/setup/stats" element={<SeedStats />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

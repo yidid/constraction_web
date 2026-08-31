@@ -32,7 +32,7 @@ const FeaturedProjects = () => {
               id={project.id}
               title={project.title}
               category={project.category}
-              image={project.image}
+              image2={project.image2}
             />
           ))}
         </div>

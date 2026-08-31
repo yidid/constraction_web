@@ -6,7 +6,12 @@ import useProjects from "../../hooks/useProjects";
 
 const OurClients = () => {
   const { projects } = useProjects();
-  const marqueeList = [...projects, ...projects, ...projects];
+  const projectsWithImages = projects.filter((project) => project.image);
+  const privateClientProjects = projects.filter(
+    (project) => project.client === "Private Client"
+  );
+  const orderedProjects = [...projectsWithImages, ...privateClientProjects];
+  const marqueeList = [...orderedProjects, ...orderedProjects, ...orderedProjects];
 
   return (
     <section className="py-16 bg-white border-y border-gray-100 overflow-hidden select-none">
@@ -25,15 +30,16 @@ const OurClients = () => {
             <div
               key={`${project.id}-${index}`}
           
-              className="flex items-center justify-center h-28 w-56 px-4 shrink-0 bg-transparent active:bg-transparent focus:bg-transparent"
+              className="flex items-center justify-center h-40 w-64 px-3 shrink-0 bg-transparent active:bg-transparent focus:bg-transparent"
             >
-              <img
-                src={project.image}
-                alt={project.title || "Client Logo"}
-                loading="lazy"
-             
-                className="h-full w-full max-h-24 max-w-full object-contain pointer-events-none"
-              />
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title || "Client Logo"}
+                  loading="lazy"
+                  className="h-full w-full max-h-32 max-w-full object-contain pointer-events-none"
+                />
+              ) : null}
             </div>
           ))}
         </div>

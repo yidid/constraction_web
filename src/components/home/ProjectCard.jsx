@@ -8,14 +8,14 @@ import { FaArrowRight } from "react-icons/fa";
  * revealing the category and a "View Project" link.
  * Used in the Home page Featured Projects section and the Portfolio page.
  */
-const ProjectCard = ({ id, title, category, image }) => {
+const ProjectCard = ({ id, title, category, image2 }) => {
   return (
     <Link
       to={`/portfolio/${id}`}
       className="group relative block aspect-[4/3] overflow-hidden rounded-card bg-dark shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2"
     >
       <img
-        src={image}
+        src={image2}
         alt={title}
         loading="lazy"
         className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"

@@ -2,13 +2,14 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import Container from "../ui/Container";
 import calculateAverageRating from "../../utils/calculateAverageRating";
-import testimonials from "../../data/testimonials";
+import useTestimonials from "../../hooks/useTestimonials";
 
 /**
  * Trust-building summary banner shown at the top of the Testimonials page:
  * average star rating (calculated dynamically) and total review count.
  */
 const RatingSummary = () => {
+  const { testimonials } = useTestimonials();
   const averageRating = calculateAverageRating(testimonials);
 
   return (

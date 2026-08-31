@@ -23,7 +23,7 @@ const Logo = ({ light = false }) => {
           light ? "text-light" : "text-dark"
         }`}
       >
-        NAF <span className="text-primary-light">Construction</span>
+        NAF <span className="text-primary-light">Construction & Trading</span>
       </span>
     </Link>
   );

@@ -14,7 +14,7 @@ import FadeIn from "../components/common/FadeIn";
 const Home = () => {
   usePageTitle(
     "Home",
-    "Elite Construction delivers quality residential and commercial construction, renovation, and design services."
+    "NAF Construction delivers quality residential and commercial construction, renovation, and design services."
   );
 
   return (

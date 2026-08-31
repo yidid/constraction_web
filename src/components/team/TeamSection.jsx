@@ -1,7 +1,7 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Container from "../ui/Container";
 import TeamMemberCard from "./TeamMemberCard";
-import team from "../../data/team";
+import { getTeamMembers } from "../../services/teamService";
 
 /**
  * Full Team page section: groups team members by department and renders
@@ -9,6 +9,24 @@ import team from "../../data/team";
  * grid — reinforcing organizational structure and credibility.
  */
 const TeamSection = () => {
+  const [team, setTeam] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadTeam() {
+      const members = await getTeamMembers();
+      if (isMounted) {
+        setTeam(members);
+      }
+    }
+
+    loadTeam();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   // Group team members by department, preserving the order departments
   // first appear in the data array.
   const groupedByDepartment = useMemo(() => {
@@ -19,7 +37,7 @@ const TeamSection = () => {
       groups[member.department].push(member);
       return groups;
     }, {});
-  }, []);
+  }, [team]);
 
   return (
     <section className="py-20 bg-light">
