@@ -7,7 +7,7 @@ import introFeatures from "../../data/features";
 
 /**
  * Company Introduction section: image + narrative text side-by-side.
- * Introduces who Elite Construction is and reinforces trust via a
+ * Introduces who NAF Construction is and reinforces trust via a
  * short feature checklist, before the visitor scrolls further.
  */
 const CompanyIntro = () => {
@@ -18,7 +18,7 @@ const CompanyIntro = () => {
           {/* Image column */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+              src="assets/images/other/const2.jpg"
               alt="Construction workers reviewing blueprints on site"
               className="rounded-lg shadow-xl w-full h-[420px] object-cover"
             />
@@ -32,14 +32,14 @@ const CompanyIntro = () => {
             <SectionHeading
               eyebrow="Who We Are"
               heading="Ethiopia's Trusted Construction Partner"
-              subtext="Since 2005, Elite Construction has been transforming blueprints into landmarks. From residential homes to large-scale commercial developments, our team combines technical expertise with genuine care for every client's vision."
+              subtext="Since 2010, NAF Construction has been transforming blueprints into landmarks. From residential homes to large-scale commercial developments, our team combines technical expertise with genuine care for every client's vision."
             />
 
             <ul className="mt-8 space-y-4">
               {introFeatures.map((feature) => (
                 <li key={feature} className="flex items-center gap-3">
                   <FaCheckCircle className="text-primary text-lg shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">{feature}</span>
+                  <span className="text-gray-600 dark:text-gray-300">{feature}</span>
                 </li>
               ))}
             </ul>

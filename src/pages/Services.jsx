@@ -6,7 +6,7 @@ import ServicesList from "../components/services/ServicesList";
 const Services = () => {
   usePageTitle(
     "Services",
-    "Explore Elite Construction's residential, commercial, renovation, interior design, architecture, and project management services."
+    "Explore NAF Construction's residential, commercial, renovation, interior design, architecture, and project management services."
   );
 
   return (

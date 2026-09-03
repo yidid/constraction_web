@@ -17,8 +17,8 @@ const CategoryFilter = ({ activeCategory, onChange }) => {
             onClick={() => onChange(category.value)}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-200 ${
               isActive
-                ? "bg-primary text-dark"
-                : "bg-light-off text-dark hover:bg-gray-200"
+                ? "bg-primary text-white"
+                : "bg-light-off text-dark hover:bg-primary hover:text-white dark:bg-dark-light dark:text-light dark:hover:bg-primary"
             }`}
           >
             {category.label}

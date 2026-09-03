@@ -6,7 +6,7 @@ import ContactSection from "../components/contact/ContactSection";
 const Contact = () => {
   usePageTitle(
     "Contact Us",
-    "Get in touch with Elite Construction for quotes, inquiries, and project consultations."
+    "Get in touch with NAF Construction for quotes, inquiries, and project consultations."
   );
 
   return (

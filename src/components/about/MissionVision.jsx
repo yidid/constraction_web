@@ -41,7 +41,7 @@ const MissionVision = () => {
               Our Vision
             </h3>
 
-            <p className="text-gray-400 dark:text-gray-300 mt-3 leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-300 mt-3 leading-relaxed">
               To redefine excellence in construction by creating landmark
               projects that strengthen communities, embrace innovation, and
               leave a lasting legacy for future generations.

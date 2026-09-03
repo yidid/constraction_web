@@ -13,10 +13,10 @@ const team = [
     department: "Leadership",
     photo:
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80",
-    bio: "Meron founded Elite Construction in 2005 and has led the company's growth from a two-person outfit into a full-service construction firm.",
+    bio: "Meron founded NAF Construction in 2005 and has led the company's growth from a two-person outfit into a full-service construction firm.",
     socials: {
       linkedin: "#",
-      email: "meron@eliteconstruction.com",
+      email: "meron@nafconstruction.com",
     },
   },
   {
@@ -30,7 +30,7 @@ const team = [
     socials: {
       linkedin: "#",
       twitter: "#",
-      email: "yonas@eliteconstruction.com",
+      email: "yonas@nafconstruction.com",
     },
   },
   {
@@ -43,7 +43,7 @@ const team = [
     bio: "Hana leads architectural design across all commercial projects, balancing aesthetics with structural practicality.",
     socials: {
       linkedin: "#",
-      email: "hana@eliteconstruction.com",
+      email: "hana@nafconstruction.com",
     },
   },
   {
@@ -81,7 +81,7 @@ const team = [
     bio: "Kaleb coordinates timelines, budgets, and subcontractors, acting as the main point of contact throughout each build.",
     socials: {
       linkedin: "#",
-      email: "kaleb@eliteconstruction.com",
+      email: "kaleb@nafconstruction.com",
     },
   },
   {

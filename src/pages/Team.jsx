@@ -6,7 +6,7 @@ import TeamSection from "../components/team/TeamSection";
 const Team = () => {
   usePageTitle(
     "Our Team",
-    "Meet the experienced engineers, architects, and project managers behind Elite Construction."
+    "Meet the experienced engineers, architects, and project managers behind NAF Construction."
   );
 
   return (

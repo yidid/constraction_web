@@ -6,7 +6,7 @@ import Container from "../components/ui/Container";
 const Blog = () => {
   usePageTitle(
     "Blog",
-    "Construction industry insights, tips, and news from Elite Construction."
+    "Construction industry insights, tips, and news from NAF Construction."
   );
 
   return (

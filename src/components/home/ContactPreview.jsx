@@ -15,7 +15,10 @@ const ContactPreview = () => {
     useContactForm();
 
   return (
-    <section className="py-20 bg-light dark:bg-dark transition-colors duration-200">
+    <section
+      id="contact"
+      className="py-20 bg-light dark:bg-dark transition-colors duration-200"
+    >
       <Container>
         <SectionHeading
           eyebrow="Get In Touch"

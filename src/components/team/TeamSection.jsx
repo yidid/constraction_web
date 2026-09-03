@@ -40,11 +40,11 @@ const TeamSection = () => {
   }, [team]);
 
   return (
-    <section className="py-20 bg-light">
+    <section className="py-20 bg-light dark:bg-dark">
       <Container>
         {Object.entries(groupedByDepartment).map(([department, members]) => (
           <div key={department} className="mb-16 last:mb-0">
-            <h2 className="text-2xl font-bold text-dark mb-8 pb-3 border-b-2 border-primary inline-block">
+            <h2 className="text-2xl font-bold text-dark dark:text-light mb-8 pb-3 border-b-2 border-primary inline-block">
               {department}
             </h2>
 

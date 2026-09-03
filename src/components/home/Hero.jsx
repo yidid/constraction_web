@@ -23,7 +23,7 @@ const Hero = () => {
           
           {/* Badge: Sky Blue fill + Dark text for high contrast */}
           <span className="inline-flex items-center gap-2 border-l-2 border-primary-light bg-dark/50 text-slate-100 text-xs font-bold tracking-[0.18em] uppercase px-4 py-2 mb-6">
-            Trusted Since 2010
+            Trusted Since 2010 E.C
           </span>
 
           {/* Heading: Pure White text with Sky Blue highlight */}
@@ -41,7 +41,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 mt-9">
-            <Button to="/contact" variant="primary">
+            <Button to="/#contact" variant="primary">
               Contact Us
             </Button>
             <Button to="/portfolio" variant="outline">

@@ -27,6 +27,7 @@ const OurServices = () => {
               icon={service.icon}
               title={service.title}
               shortDescription={service.shortDescription}
+              fullDescription={service.fullDescription}
             />
           ))}
         </div>

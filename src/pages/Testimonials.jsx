@@ -7,7 +7,7 @@ import TestimonialsGrid from "../components/testimonials/TestimonialsGrid";
 const Testimonials = () => {
   usePageTitle(
     "Testimonials",
-    "Read what Elite Construction's clients have to say about our work."
+    "Read what NAF Construction's clients have to say about our work."
   );
 
   return (

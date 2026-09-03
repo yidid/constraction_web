@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <Logo light />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-200">
-              Building strong foundations and lasting relationships. Elite
+              Building strong foundations and lasting relationships. NAF
               Construction delivers quality craftsmanship on every project,
               residential or commercial.
             </p>
@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <FaEnvelope className="text-primary shrink-0" />
-                info@eliteconstruction.com
+                nafcon22@gmail.com
               </li>
             </ul>
           </div>

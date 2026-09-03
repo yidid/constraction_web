@@ -8,7 +8,7 @@ import CoreValues from "../components/about/CoreValues";
 const About = () => {
   usePageTitle(
     "About Us",
-    "Learn about Elite Construction's history, mission, and commitment to quality craftsmanship."
+    "Learn about NAF Construction's history, mission, and commitment to quality craftsmanship."
   );
 
   return (

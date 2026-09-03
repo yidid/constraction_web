@@ -6,7 +6,7 @@ import PortfolioGrid from "../components/portfolio/PortfolioGrid";
 const Portfolio = () => {
   usePageTitle(
     "Portfolio",
-    "Browse Elite Construction's portfolio of completed residential and commercial projects."
+    "Browse NAF Construction's portfolio of completed residential and commercial projects."
   );
 
   return (

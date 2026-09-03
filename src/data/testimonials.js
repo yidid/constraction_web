@@ -12,7 +12,7 @@ const testimonials = [
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
     rating: 5,
     quote:
-      "Elite Construction turned our vision into reality with precision and care. Every deadline was met, and the craftsmanship exceeded what we imagined possible for our budget.",
+      "NAF Construction turned our vision into reality with precision and care. Every deadline was met, and the craftsmanship exceeded what we imagined possible for our budget.",
   },
   {
     id: "sara-tesfaye",
@@ -32,7 +32,7 @@ const testimonials = [
       "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=200&q=80",
     rating: 4,
     quote:
-      "Renovating a heritage property required real sensitivity to the original design. Elite Construction respected that history while modernizing everything we needed.",
+      "Renovating a heritage property required real sensitivity to the original design. NAF Construction respected that history while modernizing everything we needed.",
   },
   {
     id: "hiwot-desta",
