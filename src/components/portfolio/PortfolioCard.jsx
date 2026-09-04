@@ -23,8 +23,9 @@ const PortfolioCard = ({ id, title, category, image2, location, year }) => {
         <span className="text-primary-light text-xs font-bold uppercase tracking-[0.16em] mb-2 capitalize">
           {category} &middot; {year}
         </span>
-        <h3 className="text-light text-xl font-bold">{title}</h3>
-        <p className="text-gray-200 text-base mt-1">{location}</p>
+        <h3 className="text-xl font-bold text-light">{title}</h3>
+       
+        <p className="text-gray-200 text-base mt-1 text-sm">{location}</p>
 
         <div className="flex items-center gap-2 text-light text-sm font-semibold mt-3 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
           View Details <FaArrowRight aria-hidden="true" size={12} />

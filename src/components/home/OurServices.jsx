@@ -11,7 +11,7 @@ import services from "../../data/services";
  */
 const OurServices = () => {
   return (
-    <section className="py-20 bg-light dark:bg-dark">
+    <section className="pb-20 bg-light dark:bg-dark">
       <Container>
         <SectionHeading
           eyebrow="What We Do"

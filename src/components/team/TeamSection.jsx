@@ -4,9 +4,7 @@ import TeamMemberCard from "./TeamMemberCard";
 import { getTeamMembers } from "../../services/teamService";
 
 /**
- * Full Team page section: groups team members by department and renders
- * each group under its own heading, rather than one flat undifferentiated
- * grid — reinforcing organizational structure and credibility.
+ * Full Team page section: renders every team member in one unified group.
  */
 const TeamSection = () => {
   const [team, setTeam] = useState([]);
@@ -27,17 +25,10 @@ const TeamSection = () => {
     };
   }, []);
 
-  // Group team members by department, preserving the order departments
-  // first appear in the data array.
-  const groupedByDepartment = useMemo(() => {
-    return team.reduce((groups, member) => {
-      if (!groups[member.department]) {
-        groups[member.department] = [];
-      }
-      groups[member.department].push(member);
-      return groups;
-    }, {});
-  }, [team]);
+  const groupedByDepartment = useMemo(
+    () => (team.length ? { "Our Team": team } : {}),
+    [team]
+  );
 
   return (
     <section className="py-20 bg-light dark:bg-dark">

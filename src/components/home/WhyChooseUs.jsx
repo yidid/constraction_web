@@ -10,7 +10,7 @@ import whyChooseUs from "../../data/whyChooseUs";
  */
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-light dark:bg-dark">
+    <section className="py-20 bg-light-off dark:bg-dark">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* Text column */}

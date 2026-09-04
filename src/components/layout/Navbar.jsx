@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
             <NavLink
-              to="/contact"
+             to="/#contact" variant="primary"
               className="bg-primary text-light font-display font-bold px-4 xl:px-5 py-2.5 rounded-sm hover:bg-primary-light transition-colors duration-200 whitespace-nowrap text-sm"
             >
               Get a Quote
@@ -93,7 +93,7 @@ const Navbar = () => {
             ))}
             <li className="py-2">
               <NavLink
-                to="/contact"
+                to="/#contact" variant="primary"
                 onClick={closeMobileMenu}
                 className="block text-center bg-primary text-light font-display font-bold px-5 py-3.5 rounded-sm"
               >

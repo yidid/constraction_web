@@ -12,12 +12,12 @@ const ContactInfo = () => {
     {
       icon: FaMapMarkerAlt,
       label: "Office Address",
-      value: "123 Builder Ave, Addis Ababa, Ethiopia",
+      value: "Around CMC michael, Guji Highland building, Addis Ababa",
     },
     {
       icon: FaPhoneAlt,
       label: "Phone Number",
-      value: "+251 900 000 000",
+      value: "+251 946 452 222 / +251 92 096 6481",
     },
     {
       icon: FaEnvelope,

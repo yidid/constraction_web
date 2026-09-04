@@ -38,7 +38,7 @@ const ContactPreview = () => {
               <div>
                 <p className="font-semibold text-dark dark:text-light">Office Address</p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-                  123 Builder Ave, Addis Ababa, Ethiopia
+                  Around CMC michael, Guji Highland building, Addis Ababa
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const ContactPreview = () => {
               </div>
               <div>
                 <p className="font-semibold text-dark dark:text-light">Phone Number</p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">+251 900 000 000</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">+251 946 452 222 / +251 92 096 6481</p>
               </div>
             </div>
 

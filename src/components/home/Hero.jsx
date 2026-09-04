@@ -11,7 +11,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80')",
+          "url('/assets/images/other/const5.png')",
       }}
     >
       {/* Dark gradient overlay for text readability over the photo */}

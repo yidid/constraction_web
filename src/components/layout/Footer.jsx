@@ -54,11 +54,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-gray-200">
               <li className="flex items-center gap-2">
                 <FaMapMarkerAlt className="text-primary shrink-0" />
-                123 Builder Ave, Addis Ababa, Ethiopia
+                Around CMC michael, Guji Highland building, Addis Ababa
               </li>
               <li className="flex items-center gap-2">
                 <FaPhoneAlt className="text-primary shrink-0" />
-                +251 900 000 000
+                +251 946 452 222 / +251 92 096 6481
               </li>
               <li className="flex items-center gap-2">
                 <FaEnvelope className="text-primary shrink-0" />

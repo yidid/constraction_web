@@ -12,7 +12,7 @@ const IconFeatureCard = ({ icon: Icon, title, description }) => {
         <Icon className="text-white  dark:text-primary-light text-2xl" />
       </div>
       <h3 className="text-lg font-bold text-dark dark:text-light mt-5">{title}</h3>
-      <p className="text-gray-500 dark:text-gray-400 mt-2 leading-relaxed text-sm">
+      <p className="text-gray-500 dark:text-gray-400 mt-2 leading-relaxed text-md">
         {description}
       </p>
     </div>
