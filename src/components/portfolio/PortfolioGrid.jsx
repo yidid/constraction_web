@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import CategoryFilter from "./CategoryFilter";
 import PortfolioCard from "./PortfolioCard";
 import useProjects from "../../hooks/useProjects";
+import LoadingState from "../common/LoadingState";
 
 /**
  * Portfolio page's main section: category filter tabs + a responsive
@@ -48,7 +49,7 @@ const PortfolioGrid = () => {
         />
 
         {loading ? (
-          <p className="mt-16 text-center text-gray-500 dark:text-gray-400">Loading projects...</p>
+          <LoadingState label="Loading projects..." />
         ) : error ? (
           <p role="alert" className="mt-16 text-center text-red-600">
             {error}

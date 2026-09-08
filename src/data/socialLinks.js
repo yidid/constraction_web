@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 
 /**
  * Canonical list of social media links. Used by both the Footer and
@@ -6,10 +6,26 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
  * a platform only requires editing this one file.
  */
 const socialLinks = [
-  { name: "Facebook", icon: FaFacebookF, url: "#" },
-  { name: "Twitter", icon: FaTwitter, url: "#" },
-  { name: "Instagram", icon: FaInstagram, url: "#" },
-  { name: "LinkedIn", icon: FaLinkedinIn, url: "#" },
+  {
+    name: "Facebook",
+    icon: FaFacebookF,
+    url: "https://www.facebook.com/share/1DSfmt3dSz/?mibextid=wwXIfr",
+  },
+  {
+    name: "Instagram",
+    icon: FaInstagram,
+    url: "https://www.instagram.com/nafconstruction_?stkn=Nm1mbTMxYXZ1NTln&utm_source=qr",
+  },
+  {
+    name: "TikTok",
+    icon: FaTiktok,
+    url: "https://www.tiktok.com/@nafconstruction?_r=1",
+  },
+  {
+    name: "LinkedIn",
+    icon: FaLinkedinIn,
+    url: "#",
+  },
 ];
 
 export default socialLinks;

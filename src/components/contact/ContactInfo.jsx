@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
-import socialLinks from "../../data/socialLinks";
+import useSocialLinks from "../../hooks/useSocialLinks";
 
 /**
  * Company contact details + social links, shown alongside the form
@@ -8,6 +8,8 @@ import socialLinks from "../../data/socialLinks";
  * (also used by the Footer).
  */
 const ContactInfo = () => {
+  const socialLinks = useSocialLinks();
+
   const infoItems = [
     {
       icon: FaMapMarkerAlt,
@@ -52,6 +54,8 @@ const ContactInfo = () => {
             <a
               key={name}
               href={url}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={name}
               className="w-10 h-10 flex items-center justify-center rounded-full bg-dark text-light hover:bg-primary hover:text-dark transition-colors duration-200"
             >

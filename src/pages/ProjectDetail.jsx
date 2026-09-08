@@ -5,6 +5,7 @@ import usePageTitle from "../hooks/usePageTitle";
 import Container from "../components/ui/Container";
 import ProjectGallery from "../components/portfolio/ProjectGallery";
 import useProjects from "../hooks/useProjects";
+import LoadingState from "../components/common/LoadingState";
 
 /**
  * Dynamic route rendering full detail for a single project, based on the
@@ -22,7 +23,7 @@ const ProjectDetail = () => {
   );
 
   if (loading) {
-    return <div className="py-32 text-center">Loading project...</div>;
+    return <LoadingState label="Loading project..." />;
   }
 
   if (!project) {

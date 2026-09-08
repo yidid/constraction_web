@@ -22,13 +22,10 @@ const OurStory = () => {
             <SectionHeading
               eyebrow="Our Story"
               heading="Nearly Two Decades of Building Excellence"
-              subtext="NAF Construction was founded in 2005 by a small team of engineers who believed construction should be defined by craftsmanship and honesty, not just square footage. What started as a two-person residential outfit has grown into a full-service construction company serving both residential and commercial clients across Ethiopia."
+              subtext="Established in 2010, NAF Construction and Trading began as a modest venture with a distinct purpose: to elevate Ethiopian construction through exceptional craftsmanship and integrity. Grounded in international quality standards, what started as a focused initiative has evolved into a trusted, full-service firm."
             />
-            <p className="text-gray-500 dark:text-gray-300 mt-3 leading-relaxed">
-              Today, our team of 45+ professionals spans architecture,
-              project management, interior design, and skilled trades
-              but our founding principle remains unchanged: build every
-              project as if it were our own home.
+            <p className="text-gray-600 text-base sm:text-lg  dark:text-gray-300 mt-3 leading-relaxed">
+            Our success stems from a culture of shared purpose. Our engineers, project managers, and trade specialists work seamlessly across every phase, translating complex architectural designs into enduring structures. As our footprint expands, our commitment remains absolute: executing every project with precision, collective pride, and uncompromising standards.   
             </p>
           </div>
         </div>

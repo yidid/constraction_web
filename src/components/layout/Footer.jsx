@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import navLinks from "../../data/navLinks";
-import socialLinks from "../../data/socialLinks";
+import useSocialLinks from "../../hooks/useSocialLinks";
 import Logo from "../common/Logo";
 
 const Footer = () => {
+  const socialLinks = useSocialLinks();
+
   return (
     <footer className="bg-navy text-light dark:bg-dark">
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
@@ -22,6 +24,8 @@ const Footer = () => {
                 <a
                   key={name}
                   href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={name}
                   className="flex h-9 w-9 items-center justify-center rounded-full text-gray-200 transition-colors duration-200 hover:bg-primary hover:text-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 focus-visible:ring-offset-navy dark:focus-visible:ring-offset-dark"
                 >
