@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Container from "../ui/Container";
 import CategoryFilter from "./CategoryFilter";
 import PortfolioCard from "./PortfolioCard";
@@ -13,7 +14,11 @@ import LoadingState from "../common/LoadingState";
  */
 const PortfolioGrid = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageFromUrl = Number.parseInt(searchParams.get("page"), 10);
+  const [currentPage, setCurrentPage] = useState(
+    Number.isInteger(pageFromUrl) && pageFromUrl > 0 ? pageFromUrl : 1
+  );
   const { projects, loading, error } = useProjects();
   const projectsPerPage = 6;
 
@@ -30,22 +35,47 @@ const PortfolioGrid = () => {
     currentPage * projectsPerPage
   );
 
-  useEffect(() => {
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
     setCurrentPage(1);
-  }, [activeCategory]);
+    setSearchParams((params) => {
+      params.delete("page");
+      return params;
+    });
+  };
+
+  useEffect(() => {
+    if (Number.isInteger(pageFromUrl) && pageFromUrl > 0) {
+      setCurrentPage(pageFromUrl);
+    }
+  }, [pageFromUrl]);
+
+  const changePage = (page) => {
+    setCurrentPage(page);
+    setSearchParams((params) => {
+      if (page === 1) params.delete("page");
+      else params.set("page", String(page));
+      return params;
+    });
+  };
 
   useEffect(() => {
     if (pageCount > 0 && currentPage > pageCount) {
       setCurrentPage(pageCount);
+      setSearchParams((params) => {
+        if (pageCount === 1) params.delete("page");
+        else params.set("page", String(pageCount));
+        return params;
+      });
     }
-  }, [currentPage, pageCount]);
+  }, [currentPage, pageCount, setSearchParams]);
 
   return (
     <section className="py-20 bg-light dark:bg-dark">
       <Container>
         <CategoryFilter
           activeCategory={activeCategory}
-          onChange={setActiveCategory}
+          onChange={handleCategoryChange}
         />
 
         {loading ? (
@@ -66,6 +96,7 @@ const PortfolioGrid = () => {
                 image2={project.image2}
                 location={project.location}
                 year={project.year}
+                returnPage={currentPage}
               />
             ))}
             </div>
@@ -77,7 +108,7 @@ const PortfolioGrid = () => {
               >
                 <button
                   type="button"
-                  onClick={() => setCurrentPage((page) => page - 1)}
+                  onClick={() => changePage(currentPage - 1)}
                   disabled={currentPage === 1}
                   className="px-4 py-2 rounded-md bg-light-off dark:bg-dark-light text-dark dark:text-light font-semibold text-sm disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary hover:text-white transition-colors duration-200"
                 >
@@ -89,7 +120,7 @@ const PortfolioGrid = () => {
                     <button
                       key={page}
                       type="button"
-                      onClick={() => setCurrentPage(page)}
+                      onClick={() => changePage(page)}
                       aria-label={`Go to portfolio page ${page}`}
                       aria-current={currentPage === page ? "page" : undefined}
                       className={`w-10 h-10 rounded-md font-semibold text-sm transition-colors duration-200 ${
@@ -105,7 +136,7 @@ const PortfolioGrid = () => {
 
                 <button
                   type="button"
-                  onClick={() => setCurrentPage((page) => page + 1)}
+                  onClick={() => changePage(currentPage + 1)}
                   disabled={currentPage === pageCount}
                   className="px-4 py-2 rounded-md bg-light-off dark:bg-dark-light text-dark dark:text-light font-semibold text-sm disabled:opacity-40 disabled:cursor-not-allowed hover:bg-primary hover:text-white transition-colors duration-200"
                 >
