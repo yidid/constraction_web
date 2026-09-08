@@ -1,5 +1,3 @@
-import { FaLinkedinIn, FaTwitter, FaEnvelope } from "react-icons/fa";
-
 /**
  * Team member roster, grouped by department for the Team page.
  * `socials` only includes the platforms that apply to that person —
