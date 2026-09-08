@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import testimonialsData from "../data/testimonials";
 import { getTestimonials } from "../services/testimonialService";
 
 function useTestimonials() {
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState(testimonialsData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -11,7 +12,7 @@ function useTestimonials() {
 
     getTestimonials()
       .then((firebaseTestimonials) => {
-        if (active) {
+        if (active && firebaseTestimonials.length > 0) {
           setTestimonials(firebaseTestimonials);
         }
       })

@@ -3,30 +3,39 @@ import socialLinksData from "../data/socialLinks";
 import { getSocialLinks } from "../services/socialLinkService";
 
 function useSocialLinks() {
-  const [socialLinks, setSocialLinks] = useState([]);
+  const [socialLinks, setSocialLinks] = useState(socialLinksData);
 
   useEffect(() => {
     let active = true;
 
     getSocialLinks()
       .then((firebaseSocialLinks) => {
-        if (active) {
-          const iconsByName = new Map(
-            socialLinksData.map((socialLink) => [socialLink.name.toLowerCase(), socialLink.icon])
-          );
+        if (!active || firebaseSocialLinks.length === 0) return;
 
-          setSocialLinks(
-            firebaseSocialLinks
-              .map((socialLink) => ({
-                ...socialLink,
-                icon: iconsByName.get(socialLink.name.toLowerCase()),
-              }))
-              .filter((socialLink) => socialLink.icon)
-          );
-        }
+        const iconsByName = new Map(
+          socialLinksData.map((socialLink) => [socialLink.name.toLowerCase(), socialLink.icon])
+        );
+
+        const linksFromFirebase = new Map(
+          firebaseSocialLinks.map((socialLink) => [socialLink.name.toLowerCase(), socialLink])
+        );
+
+        setSocialLinks(
+          socialLinksData
+            .map((localSocialLink) => {
+              const firebaseSocialLink = linksFromFirebase.get(localSocialLink.name.toLowerCase());
+
+              return {
+                ...localSocialLink,
+                ...firebaseSocialLink,
+                icon: iconsByName.get(localSocialLink.name.toLowerCase()),
+              };
+            })
+            .filter((socialLink) => socialLink.icon)
+        );
       })
       .catch(() => {
-        if (active) setSocialLinks([]);
+        // Keep the local links when Firebase is unavailable.
       });
 
     return () => {

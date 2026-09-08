@@ -13,11 +13,9 @@ const TeamSection = () => {
     let isMounted = true;
 
     async function loadTeam() {
-      try {
-        const members = await getTeamMembers();
-        if (isMounted) setTeam(members);
-      } catch {
-        if (isMounted) setTeam([]);
+      const members = await getTeamMembers();
+      if (isMounted) {
+        setTeam(members);
       }
     }
 

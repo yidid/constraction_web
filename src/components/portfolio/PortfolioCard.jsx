@@ -13,11 +13,13 @@ const PortfolioCard = ({ id, title, category, image2, location, year }) => {
       to={`/portfolio/${id}`}
       className="group relative block aspect-[4/3] overflow-hidden rounded-card bg-dark shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2"
     >
-      <img
-        src={image2}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-      />
+      {image2 && (
+        <img
+          src={image2}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      )}
 
       <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/30 to-transparent flex flex-col justify-end p-6">
         <span className="text-primary-light text-xs font-bold uppercase tracking-[0.16em] mb-2 capitalize">

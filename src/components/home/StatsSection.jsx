@@ -18,21 +18,17 @@ const StatsSection = () => {
     let isMounted = true;
 
     async function loadStats() {
-      try {
-        const profile = await getCompanyStats();
+      const profile = await getCompanyStats();
 
-        if (isMounted) {
-          const yearsOfExperience = Math.max(0, new Date().getFullYear() - (profile.foundedYear ?? 2005));
+      if (isMounted) {
+        const yearsOfExperience = Math.max(0, new Date().getFullYear() - (profile.foundedYear ?? 2005));
 
-          setStats([
-            { id: "years", value: yearsOfExperience, suffix: "+", label: "Years of Experience" },
-            { id: "projects", value: profile.projects ?? 250, suffix: "+", label: "Projects Completed" },
-            { id: "clients", value: profile.clients ?? 180, suffix: "+", label: "Happy Clients" },
-            { id: "team", value: profile.team ?? 45, suffix: "+", label: "Team Members" },
-          ]);
-        }
-      } catch {
-        if (isMounted) setStats([]);
+        setStats([
+          { id: "years", value: yearsOfExperience, suffix: "+", label: "Years of Experience" },
+          { id: "projects", value: profile.projects ?? 250, suffix: "+", label: "Projects Completed" },
+          { id: "clients", value: profile.clients ?? 180, suffix: "+", label: "Happy Clients" },
+          { id: "team", value: profile.team ?? 45, suffix: "+", label: "Team Members" },
+        ]);
       }
     }
 

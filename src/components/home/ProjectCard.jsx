@@ -14,12 +14,14 @@ const ProjectCard = ({ id, title, category, image2 }) => {
       to={`/portfolio/${id}`}
       className="group relative block aspect-[4/3] overflow-hidden rounded-card bg-dark shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2"
     >
-      <img
-        src={image2}
-        alt={title}
-        loading="lazy"
-        className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
-      />
+      {image2 && (
+        <img
+          src={image2}
+          alt={title}
+          loading="lazy"
+          className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
+        />
+      )}
 
       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-dark/95 via-dark/25 to-transparent p-6">
         <span className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-primary-light">
