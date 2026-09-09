@@ -95,7 +95,6 @@ const PortfolioGrid = () => {
                 category={project.category}
                 image2={project.image2}
                 location={project.location}
-                year={project.year}
                 returnPage={currentPage}
               />
             ))}

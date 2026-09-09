@@ -21,7 +21,7 @@ const OurStory = () => {
           <div>
             <SectionHeading
               eyebrow="Our Story"
-              heading="Nearly Two Decades of Building Excellence"
+              heading="Engineered for Precision, Built to Last"
               subtext="Established in 2010, NAF Construction and Trading began as a modest venture with a distinct purpose: to elevate Ethiopian construction through exceptional craftsmanship and integrity. Grounded in international quality standards, what started as a focused initiative has evolved into a trusted, full-service firm."
             />
             <p className="text-gray-600 text-base sm:text-lg  dark:text-gray-300 mt-3 leading-relaxed">

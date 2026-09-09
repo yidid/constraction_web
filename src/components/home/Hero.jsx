@@ -34,7 +34,10 @@ const Hero = () => {
           </h1>
 
           {/* Body Paragraph */}
-          <p className="text-slate-200 text-lg mt-6 max-w-lg leading-relaxed">
+          <p
+            className="text-slate-200 text-lg mt-6 max-w-lg leading-relaxed"
+            style={{ textAlign: "justify" }}
+          >
             Bridging the gap between premium material sourcing and masterful architectural execution. 
             We translate sophisticated designs into high-end, permanent realities through rigorous field management and absolute geometric precision.
           </p>

@@ -1,6 +1,6 @@
 import React from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
-import { FaArrowLeft, FaMapMarkerAlt, FaCalendarAlt, FaLayerGroup } from "react-icons/fa";
+import { useParams, Navigate, Link, useSearchParams } from "react-router-dom";
+import { FaArrowLeft, FaMapMarkerAlt, FaLayerGroup } from "react-icons/fa";
 import usePageTitle from "../hooks/usePageTitle";
 import Container from "../components/ui/Container";
 import ProjectGallery from "../components/portfolio/ProjectGallery";
@@ -14,8 +14,11 @@ import LoadingState from "../components/common/LoadingState";
  */
 const ProjectDetail = () => {
   const { projectId } = useParams();
+  const [searchParams] = useSearchParams();
   const { projects, loading } = useProjects();
   const project = projects.find((p) => p.id === projectId);
+  const fromPage = searchParams.get("fromPage");
+  const portfolioPath = fromPage ? `/portfolio?page=${fromPage}` : "/portfolio";
 
   usePageTitle(
     project ? project.title : "Project Not Found",
@@ -35,7 +38,7 @@ const ProjectDetail = () => {
       <section className="bg-navy dark:bg-dark pt-24 pb-16">
         <Container>
           <Link
-            to="/portfolio"
+            to={portfolioPath}
             className="inline-flex items-center gap-2 text-gray-400 hover:text-primary text-sm mb-6 transition-colors duration-200"
           >
             <FaArrowLeft size={12} /> Back to Portfolio
@@ -44,7 +47,10 @@ const ProjectDetail = () => {
           <h1 className="text-3xl sm:text-4xl font-bold text-light">
             {project.title}
           </h1>
-  <p className="text-gray-300 dark:text-gray-400 text-lg pt-5 leading-relaxed max-w-4xl mb-12">
+    <p
+      className="text-gray-300 dark:text-gray-400 text-lg pt-5 leading-relaxed max-w-8xl mb-12"
+      style={{ textAlign: "justify" }}
+    >
             {project.description}
           </p>
           <div className="flex flex-wrap gap-6 mt-5 text-gray-300 text-sm">
@@ -55,10 +61,6 @@ const ProjectDetail = () => {
             <span className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-primary" />
               {project.location}
-            </span>
-            <span className="flex items-center gap-2">
-              <FaCalendarAlt className="text-primary" />
-              {project.year}
             </span>
           </div>
         </Container>
