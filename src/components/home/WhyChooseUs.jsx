@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
           {/* Image column */}
           <div className="lg:order-2">
             <img
-              src="assets/images/other/const4.jpg"
+              src="assets/images/other/const7.png"
               alt="Construction site manager overseeing project progress"
               className="rounded-lg shadow-xl w-full h-[520px] object-cover"
             />
