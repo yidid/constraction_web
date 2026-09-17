@@ -14,7 +14,7 @@ const OurClients = () => {
   const marqueeList = [...orderedProjects, ...orderedProjects, ...orderedProjects];
 
   return (
-    <section className="py-16 bg-white border-y border-gray-100 overflow-hidden select-none">
+    <section className="py-16 bg-white dark:bg-dark border-y border-gray-100 dark:border-dark-light overflow-hidden select-none transition-colors duration-200">
       <Container>
         <SectionHeading
           eyebrow="Trusted By"
