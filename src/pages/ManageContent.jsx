@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {
   GoogleAuthProvider,
   browserLocalPersistence,
-  getRedirectResult,
   onAuthStateChanged,
   setPersistence,
   signInWithEmailAndPassword,
@@ -29,33 +28,19 @@ function ManageContent() {
 
   useEffect(() => {
     let active = true;
-    let redirectChecked = false;
     let auth;
     try {
       auth = getFirebaseAuth();
       const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         if (active) {
           setUser(currentUser);
-          if (redirectChecked) setAuthLoading(false);
+          setAuthLoading(false);
         }
       });
-      getRedirectResult(auth)
-        .then((result) => {
-          if (active && result?.user) {
-            setUser(result.user);
-          }
-        })
-        .catch((error) => {
-          if (active) {
-            setAuthError(error.message || "Unable to complete Google sign-in.");
-            setAuthLoading(false);
-          }
-        })
-        .finally(() => {
-          redirectChecked = true;
-          if (active) setAuthLoading(false);
-        });
-      return unsubscribe;
+      return () => {
+        active = false;
+        unsubscribe();
+      };
     } catch (error) {
       setAuthError(error.message);
       setAuthLoading(false);
@@ -80,7 +65,12 @@ function ManageContent() {
       await setPersistence(auth, browserLocalPersistence);
       await signInWithRedirect(auth, new GoogleAuthProvider());
     } catch (error) {
-      setAuthError(error.message || "Unable to sign in with Google.");
+      const authMessages = {
+        "auth/unauthorized-domain": "This website is not authorized in Firebase. Add its domain in Firebase Authentication settings.",
+        "auth/operation-not-allowed": "Enable Google sign-in in Firebase Authentication.",
+        "auth/popup-blocked": "Your browser blocked the Google sign-in window.",
+      };
+      setAuthError(authMessages[error.code] || error.message || "Unable to sign in with Google.");
     }
   };
 
