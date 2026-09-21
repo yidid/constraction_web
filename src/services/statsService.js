@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, setDoc, writeBatch } from "firebase/firestore";
+import { collection, doc, getDoc, setDoc, writeBatch } from "firebase/firestore";
 import { getFirebaseDb } from "../firebase";
 
 const STATS_COLLECTION = "companyStats";
