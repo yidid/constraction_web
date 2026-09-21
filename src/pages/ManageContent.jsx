@@ -5,7 +5,7 @@ import {
   onAuthStateChanged,
   setPersistence,
   signInWithEmailAndPassword,
-  signInWithRedirect,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
 import { getFirebaseAuth } from "../firebase";
@@ -63,12 +63,13 @@ function ManageContent() {
     try {
       const auth = getFirebaseAuth();
       await setPersistence(auth, browserLocalPersistence);
-      await signInWithRedirect(auth, new GoogleAuthProvider());
+      await signInWithPopup(auth, new GoogleAuthProvider());
     } catch (error) {
       const authMessages = {
         "auth/unauthorized-domain": "This website is not authorized in Firebase. Add its domain in Firebase Authentication settings.",
         "auth/operation-not-allowed": "Enable Google sign-in in Firebase Authentication.",
         "auth/popup-blocked": "Your browser blocked the Google sign-in window.",
+        "auth/popup-closed-by-user": "Google sign-in was cancelled.",
       };
       setAuthError(authMessages[error.code] || error.message || "Unable to sign in with Google.");
     }
