@@ -1,12 +1,12 @@
-import { collection, doc, getDocs, writeBatch } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, setDoc, writeBatch } from "firebase/firestore";
 import { getFirebaseDb } from "../firebase";
 
 const STATS_COLLECTION = "companyStats";
 
 export async function getCompanyStats() {
-  const snapshot = await getDocs(collection(getFirebaseDb(), STATS_COLLECTION));
+  const statsDocument = await getDoc(doc(getFirebaseDb(), STATS_COLLECTION, "company"));
 
-  if (snapshot.empty) {
+  if (!statsDocument.exists()) {
     return {
       foundedYear: 2005,
       projects: 250,
@@ -15,7 +15,7 @@ export async function getCompanyStats() {
     };
   }
 
-  return snapshot.docs[0].data();
+  return statsDocument.data();
 }
 
 export async function seedCompanyStats(stats) {
@@ -33,5 +33,17 @@ export async function seedCompanyStats(stats) {
   batch.set(doc(statsCollection, "company"), companyStats, { merge: true });
   await batch.commit();
 
+  return companyStats;
+}
+
+export async function updateCompanyStats(stats) {
+  const companyStats = {
+    foundedYear: Number(stats.foundedYear),
+    projects: Number(stats.projects),
+    clients: Number(stats.clients),
+    team: Number(stats.team),
+  };
+
+  await setDoc(doc(getFirebaseDb(), STATS_COLLECTION, "company"), companyStats, { merge: true });
   return companyStats;
 }

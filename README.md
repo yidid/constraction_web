@@ -7,7 +7,37 @@
 3. Start the app with `npm start`.
 4. Open `http://localhost:3000/setup/projects` and select **Import projects**.
 
-The importer writes all records from `src/data/projects.js` to the `projects` collection. Existing document IDs are preserved, so running the importer again updates those records instead of creating duplicates. The Firebase web configuration is safe to include in the client, but Firestore security rules should restrict write access before deploying.
+The importer writes all records from `src/data/projects.js` to the `projects` collection. Existing document IDs are preserved, so running the importer again updates those records instead of creating duplicates. The Firebase web configuration is safe to include in the client. Deploy the Firebase rules before using the dashboard.
+
+## Manage Website Content
+
+The protected content dashboard is available at `/manage`. It lets an authenticated manager add, edit, and delete projects, team members, and social links, and update the company statistics used by the public site.
+
+1. In Firebase Console, enable **Authentication > Sign-in method > Google** or **Email/Password**.
+2. In **Authentication > Users**, create an account for each person who should manage content.
+3. Add the Firebase web configuration to `.env` using the `REACT_APP_FIREBASE_*` variables already used by the app.
+4. Open `/manage` on the hosted site and sign in with the Firebase account.
+
+Images are currently stored as image URLs so existing files under `public/assets` and external image URLs can both be used. Firebase Storage upload can be added later without changing the Firestore document shapes.
+
+## Deploy With Firebase Hosting
+
+Install the Firebase CLI and authenticate once:
+
+```text
+npm install -g firebase-tools
+firebase login
+```
+
+Build and deploy from the project directory. Replace `your-firebase-project-id` with the Firebase project that owns the web app configuration:
+
+```text
+firebase use your-firebase-project-id
+npm run build
+firebase deploy --only hosting,firestore
+```
+
+The included `firebase.json` rewrites client-side routes such as `/manage` to the React entry point. The included `firestore.rules` keeps the site publicly readable while requiring Firebase Authentication for project writes. Storage uploads also require authentication.
 
 ## Contact Form EmailJS Setup
 

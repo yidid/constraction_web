@@ -13,7 +13,7 @@ const OurStory = () => {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <img
-            src="assets/images/other/unnamed.jpg"
+            src="assets/images/other/const8.PNG"
             alt="NAF Construction founding team on an early project site"
             className="rounded-lgshadow-xl w-full h-[440px] object-cover"
           />

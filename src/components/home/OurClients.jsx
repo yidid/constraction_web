@@ -8,7 +8,7 @@ const OurClients = () => {
   const { projects } = useProjects();
   const projectsWithImages = projects.filter((project) => project.image);
   const privateClientProjects = projects.filter(
-    (project) => project.client === "Private Client"
+    (project) => project.client === "Private Client" && project.image
   );
   const orderedProjects = [...projectsWithImages, ...privateClientProjects];
   const marqueeList = [...orderedProjects, ...orderedProjects, ...orderedProjects];

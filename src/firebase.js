@@ -1,5 +1,7 @@
 import { getApp, getApps, initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -23,4 +25,30 @@ export function getFirebaseDb() {
 
   const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
   return getFirestore(app);
+}
+
+export function getFirebaseAuth() {
+  const missingKeys = requiredConfigKeys.filter((key) => !firebaseConfig[key]);
+
+  if (missingKeys.length > 0) {
+    throw new Error(
+      `Missing Firebase configuration: ${missingKeys.join(", ")}. Add the REACT_APP_FIREBASE_* values to your .env file.`
+    );
+  }
+
+  const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+  return getAuth(app);
+}
+
+export function getFirebaseStorage() {
+  const missingKeys = requiredConfigKeys.filter((key) => !firebaseConfig[key]);
+
+  if (missingKeys.length > 0) {
+    throw new Error(
+      `Missing Firebase configuration: ${missingKeys.join(", ")}. Add the REACT_APP_FIREBASE_* values to your .env file.`
+    );
+  }
+
+  const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+  return getStorage(app);
 }

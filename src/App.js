@@ -16,6 +16,8 @@ import NotFound from "./pages/NotFound";
 import SeedProjects from "./pages/SeedProjects";
 import SeedTeam from "./pages/SeedTeam";
 import SeedStats from "./pages/SeedStats";
+import ManageContent from "./pages/ManageContent";
+import ClientProjects from "./pages/ClientProjects";
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
           <Route path="/setup/projects" element={<SeedProjects />} />
           <Route path="/setup/team" element={<SeedTeam />} />
           <Route path="/setup/stats" element={<SeedStats />} />
+          <Route path="/manage" element={<ManageContent />} />
+          <Route path="/admin/naf" element={<ManageContent />} />
+          <Route path="/client-projects" element={<ClientProjects />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

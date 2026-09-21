@@ -18,7 +18,7 @@ const CompanyIntro = () => {
           {/* Image column */}
           <div className="relative">
             <img
-              src="assets/images/other/const2.jpg"
+              src="assets/images/other/const9.PNG"
               alt="Construction workers reviewing blueprints on site"
               className="rounded-lg shadow-xl w-full h-[420px] object-cover"
             />
@@ -32,7 +32,7 @@ const CompanyIntro = () => {
             <SectionHeading
               eyebrow="Who We Are"
               heading="Ethiopia's Trusted Construction Partner"
-              subtext="Since 2010, NAF Construction has been transforming blueprints into landmarks. From residential homes to large-scale commercial developments, our team combines technical expertise with genuine care for every client's vision."
+              subtext="Since 2010 E.C, NAF Construction has been transforming blueprints into landmarks. From residential homes to large-scale commercial developments, our team combines technical expertise with genuine care for every client's vision."
             />
 
             <ul className="mt-8 space-y-4">

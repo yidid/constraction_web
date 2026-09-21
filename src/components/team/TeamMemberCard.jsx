@@ -27,7 +27,7 @@ const TeamMemberCard = ({ name, role, photo, socials }) => {
 
       <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent flex flex-col justify-end p-6">
         <h3 className="text-light text-lg font-bold">{name}</h3>
-        <p className="text-primary text-sm font-medium mt-1">{role}</p>
+        <p className="text-light text-sm font-medium mt-1">{role}</p>
 
         {/* Social icons: hidden by default, revealed on hover */}
         <div className="flex gap-3 mt-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
