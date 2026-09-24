@@ -39,6 +39,15 @@ firebase deploy --only hosting,firestore
 
 The included `firebase.json` rewrites client-side routes such as `/manage` to the React entry point. The included `firestore.rules` keeps the site publicly readable while requiring Firebase Authentication for project writes. Storage uploads also require authentication.
 
+## Connect a Custom Domain and SEO
+
+1. Buy the preferred `.com` domain and add it in Netlify under **Domain management > Add custom domain**.
+2. At the domain registrar, use the DNS records Netlify provides. Enable HTTPS in Netlify and choose one canonical version, usually `https://your-domain.com` without `www`.
+3. Copy `.env.example` to `.env` and set `REACT_APP_SITE_URL` to that canonical URL. Add the same variable in Netlify under **Site configuration > Environment variables**, then redeploy.
+4. Update the domain in `public/robots.txt` and `public/sitemap.xml` after the final domain is known, then submit `https://your-domain.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+
+The app generates page-specific titles, descriptions, canonical URLs, social metadata, and `ConstructionBusiness` structured data from `REACT_APP_SITE_URL`.
+
 ## Contact Form EmailJS Setup
 
 1. Create an EmailJS service and email template at [emailjs.com](https://www.emailjs.com/).

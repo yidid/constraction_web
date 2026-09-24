@@ -78,7 +78,7 @@ function ManageContent() {
   if (authLoading) return <main className="min-h-screen px-6 py-24 text-center">Loading management area...</main>;
   if (!user) {
     return (
-      <main className="min-h-screen bg-light-off px-6 py-24">
+      <main className="admin-shell min-h-screen bg-light-off px-6 py-24">
         <form onSubmit={handleLogin} className="mx-auto max-w-md rounded-card bg-light p-8 shadow-card">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">NAF Construction</p>
           <h1 className="mb-2 text-3xl font-bold text-dark">Content management</h1>
@@ -167,7 +167,7 @@ function ContentEditor({ user, onSignOut }) {
   const tabs = [{ id: "projects", label: "Projects" }, { id: "team", label: "Team" }, { id: "stats", label: "Stats" }, { id: "social", label: "Social links" }];
 
   return (
-    <main className="min-h-screen bg-light-off px-4 py-12 sm:px-8">
+    <main className="admin-shell min-h-screen bg-light-off px-4 py-12 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4"><div><p className="text-sm font-semibold uppercase tracking-widest text-primary">Private workspace</p><h1 className="text-4xl font-bold text-dark">Manage website content</h1><p className="text-dark/60">Signed in as {user.email}</p></div><button onClick={onSignOut} className="rounded border border-dark/20 bg-light px-4 py-2 font-semibold">Sign out</button></div>
         <nav className="mb-6 flex flex-wrap gap-2" aria-label="Content types">{tabs.map((item) => <button key={item.id} onClick={() => { setTab(item.id); setEditingId(null); }} className={`rounded px-4 py-2 font-semibold ${tab === item.id ? "bg-primary text-light" : "bg-light text-dark"}`}>{item.label}</button>)}</nav>

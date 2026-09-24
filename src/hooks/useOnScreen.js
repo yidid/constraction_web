@@ -20,6 +20,11 @@ const useOnScreen = (options = { threshold: 0.3 }) => {
     const currentRef = ref.current;
     if (!currentRef) return;
 
+    if (typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);

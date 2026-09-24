@@ -22,7 +22,9 @@ const ScrollToTop = () => {
       }
     }
 
-    window.scrollTo(0, 0);
+    if (process.env.NODE_ENV !== "test") {
+      window.scrollTo(0, 0);
+    }
   }, [pathname, hash]);
 
   return null;

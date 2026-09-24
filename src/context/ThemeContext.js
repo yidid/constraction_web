@@ -16,12 +16,12 @@ const ThemeContext = createContext();
  */
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem("elite-construction-theme");
+    const savedTheme = localStorage.getItem("naf-construction-theme");
     if (savedTheme) return savedTheme;
 
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    const prefersDark =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
     return prefersDark ? "dark" : "light";
   });
 
@@ -33,7 +33,7 @@ export const ThemeProvider = ({ children }) => {
     } else {
       root.classList.remove("dark");
     }
-    localStorage.setItem("elite-construction-theme", theme);
+    localStorage.setItem("naf-construction-theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {

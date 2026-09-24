@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://nafconstruction.netlify.app/sitemap.xml
+Sitemap: https://nafconstructionandtrading.com/sitemap.xml

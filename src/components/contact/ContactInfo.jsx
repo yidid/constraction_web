@@ -24,7 +24,7 @@ const ContactInfo = () => {
     {
       icon: FaEnvelope,
       label: "Email Address",
-      value: "info@eliteconstruction.com",
+      value: "info@nafconstruction.com",
     },
     {
       icon: FaClock,

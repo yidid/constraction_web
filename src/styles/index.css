@@ -39,4 +39,100 @@
   html.dark body {
     @apply bg-dark text-light;
   }
+
+  .admin-shell {
+    --admin-background: #edf2f6;
+    --admin-panel: #ffffff;
+    --admin-panel-muted: #f7f9fb;
+    --admin-text: #132238;
+    --admin-muted: #5d6b7b;
+    --admin-border: #d5dee8;
+    --admin-input: #ffffff;
+    --admin-focus: rgba(29, 93, 166, 0.2);
+    color: var(--admin-text);
+    background-color: var(--admin-background) !important;
+    background-image: linear-gradient(rgba(19, 34, 56, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(19, 34, 56, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  html.dark .admin-shell {
+    --admin-background: #0b1422;
+    --admin-panel: #152235;
+    --admin-panel-muted: #101c2d;
+    --admin-text: #eef4fb;
+    --admin-muted: #aab8c9;
+    --admin-border: #2d4057;
+    --admin-input: #0e1a2a;
+    --admin-focus: rgba(78, 157, 221, 0.3);
+    background-image: linear-gradient(rgba(197, 216, 235, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(197, 216, 235, 0.035) 1px, transparent 1px);
+  }
+
+  .admin-shell .bg-light,
+  .admin-shell [class~="bg-light"] {
+    background-color: var(--admin-panel) !important;
+  }
+
+  .admin-shell .text-dark,
+  .admin-shell [class~="text-dark"] {
+    color: var(--admin-text) !important;
+  }
+
+  .admin-shell [class~="text-dark/60"],
+  .admin-shell [class~="text-dark/70"] {
+    color: var(--admin-muted) !important;
+  }
+
+  .admin-shell [class~="border-dark/20"] {
+    border-color: var(--admin-border) !important;
+  }
+
+  .admin-shell input,
+  .admin-shell select {
+    color: var(--admin-text);
+    background-color: var(--admin-input) !important;
+    border-color: var(--admin-border) !important;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .admin-shell input::placeholder {
+    color: var(--admin-muted);
+    opacity: 0.8;
+  }
+
+  .admin-shell input:focus,
+  .admin-shell select:focus {
+    outline: none;
+    border-color: #3c92d3 !important;
+    box-shadow: 0 0 0 3px var(--admin-focus);
+  }
+
+  .admin-shell button {
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .admin-shell button:active {
+    transform: translateY(1px);
+  }
+
+  .admin-shell [class~="shadow-card"] {
+    box-shadow: 0 16px 40px rgba(1, 27, 62, 0.1);
+  }
+
+  html.dark .admin-shell [class~="shadow-card"] {
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+  }
+
+  html.dark .admin-shell [class~="bg-light-off"] {
+    background-color: var(--admin-panel-muted) !important;
+  }
+
+  html.dark .admin-shell [class~="border-red-200"] {
+    border-color: #8f4650 !important;
+  }
+
+  html.dark .admin-shell [class~="text-red-700"] {
+    color: #ff9da8 !important;
+  }
 }
