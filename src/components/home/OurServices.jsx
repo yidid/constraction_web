@@ -15,8 +15,8 @@ const OurServices = () => {
       <Container>
         <SectionHeading
           eyebrow="What We Do"
-          heading="Construction, Civil Works and Supply Services"
-          subtext="From commercial building construction and structural work to road construction, renovation, finishing, landscaping, and material procurement, we support projects from scope to completion."
+          heading="Our Services"
+          subtext="From ground-up construction to detailed interior finishes, we offer a full range of services to bring your project to life."
           centered
         />
 

@@ -17,8 +17,8 @@ const WhyChooseUs = () => {
           <div className="lg:order-1">
             <SectionHeading
               eyebrow="Why Choose Us"
-              heading="Why Partner with NAF Construction"
-              subtext="Developers, procurement teams, institutions, and private clients need clear coordination, dependable sourcing, and disciplined site delivery. Our approach is built around those project priorities."
+              heading="Built On Trust, Delivered With Precision"
+              subtext="We combine technical expertise with genuine accountability, so every client walks away with a project that exceeds expectations."
             />
 
             <div className="mt-10 space-y-8">

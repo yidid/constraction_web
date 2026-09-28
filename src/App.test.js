@@ -10,6 +10,6 @@ test('renders the NAF Construction website', () => {
   );
 
   expect(
-    screen.getByRole("heading", { name: /Construction built for Ethiopia/i })
+    screen.getByRole("heading", { name: /Solid grounds/i })
   ).toBeInTheDocument();
 });

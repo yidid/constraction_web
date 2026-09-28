@@ -90,7 +90,7 @@ const ContactForm = () => {
         rows={5}
         value={formData.message}
         onChange={handleChange}
-        placeholder="Tell us about your project, tender scope, BOQ, material requirement, location, and target timeline..."
+        placeholder="Tell us about your project..."
         className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-dark resize-none"
       />
 

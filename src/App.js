@@ -5,8 +5,6 @@ import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import GeneralContracting from "./pages/GeneralContracting";
-import TradingSupply from "./pages/TradingSupply";
 import ServiceDetail from "./pages/ServiceDetail";
 import Portfolio from "./pages/Portfolio";
 import ProjectDetail from "./pages/ProjectDetail";
@@ -29,8 +27,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/general-contracting" element={<GeneralContracting />} />
-          <Route path="/trading-supply" element={<TradingSupply />} />
           <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:projectId" element={<ProjectDetail />} />

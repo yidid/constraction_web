@@ -28,9 +28,9 @@ const Hero = () => {
 
           {/* Heading: Pure White text with Sky Blue highlight */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08]">
-            Construction built for Ethiopia,{" "}
+            Solid grounds,{" "}
             <br />
-            <span className="text-primary-light">sharp execution</span>
+            <span className="text-primary-light">Sharp execution</span>
           </h1>
 
           {/* Body Paragraph */}
@@ -38,7 +38,8 @@ const Hero = () => {
             className="text-slate-200 text-lg mt-6 max-w-lg leading-relaxed"
             style={{ textAlign: "justify" }}
           >
-            NAF Construction and Trading delivers residential, commercial, renovation, structural, road construction, and finishing work in Addis Ababa and across Ethiopia.
+            Bridging the gap between premium material sourcing and masterful architectural execution. 
+            We translate sophisticated designs into high-end, permanent realities through rigorous field management and absolute geometric precision.
           </p>
 
           {/* CTA Buttons */}

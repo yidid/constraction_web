@@ -31,8 +31,8 @@ const CompanyIntro = () => {
           <div>
             <SectionHeading
               eyebrow="Who We Are"
-              heading="A Construction Partner for Ethiopia's Projects"
-              subtext="NAF Construction and Trading supports residential, commercial, institutional, and infrastructure projects in Addis Ababa and across Ethiopia. We combine technical expertise, practical site coordination, and careful workmanship from the first requirement review through completion."
+              heading="Ethiopia's Trusted Construction Partner"
+              subtext="Since 2010 E.C, NAF Construction has been transforming blueprints into landmarks. From residential homes to large-scale commercial developments, our team combines technical expertise with genuine care for every client's vision."
             />
 
             <ul className="mt-8 space-y-4">

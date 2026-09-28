@@ -12,8 +12,8 @@ const Contact = () => {
   return (
     <div>
       <PageHeader
-        title="Construction RFQ and Tender Inquiry"
-        subtitle="Send your project brief, tender documents, drawings, BOQ, or material schedule for review."
+        title="Contact Us"
+        subtitle="Let's discuss your next project."
       />
       <ContactSection />
     </div>
