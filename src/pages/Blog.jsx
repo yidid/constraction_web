@@ -6,7 +6,7 @@ import Container from "../components/ui/Container";
 const Blog = () => {
   usePageTitle(
     "Blog",
-    "Construction industry insights, tips, and news from NAF Construction."
+    "Read construction insights, project guidance, renovation advice, and industry updates from NAF Construction and Trading in Ethiopia."
   );
 
   return (

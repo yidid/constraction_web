@@ -16,8 +16,10 @@ const ServiceDetail = () => {
 
   // Must call usePageTitle unconditionally (React hooks rule) — guard the value instead
   usePageTitle(
-    service ? service.title : "Service Not Found",
-    service ? service.fullDescription.slice(0, 155) : ""
+    service ? `${service.title} in Ethiopia` : "Service Not Found",
+    service
+      ? `${service.fullDescription} NAF Construction serves Addis Ababa and projects across Ethiopia.`.slice(0, 160)
+      : ""
   );
 
   // If no matching service is found, redirect to the 404 page rather than crashing

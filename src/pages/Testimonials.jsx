@@ -6,8 +6,8 @@ import TestimonialsGrid from "../components/testimonials/TestimonialsGrid";
 
 const Testimonials = () => {
   usePageTitle(
-    "Testimonials",
-    "Read what NAF Construction's clients have to say about our work."
+    "Client Testimonials",
+    "Read feedback from clients about NAF Construction's residential, commercial, renovation, and project delivery work in Ethiopia."
   );
 
   return (

@@ -12,8 +12,8 @@ import FadeIn from "../components/common/FadeIn";
 
 const Home = () => {
   usePageTitle(
-    "Home",
-    "NAF Construction delivers quality residential and commercial construction, renovation, and design services."
+    "Construction Company in Ethiopia",
+    "NAF Construction delivers residential, commercial, renovation, structural, road construction, finishing, and landscaping services in Addis Ababa and across Ethiopia."
   );
 
   return (

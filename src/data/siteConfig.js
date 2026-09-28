@@ -5,10 +5,12 @@ const siteConfig = {
   legalName: "NAF Construction & Trading",
   url: siteUrl,
   description:
-    "NAF Construction delivers quality residential and commercial construction, renovation, and design services in Ethiopia.",
+    "NAF Construction and Trading delivers residential, commercial, renovation, structural, road construction, finishing, and landscaping services in Ethiopia.",
   locale: "en_ET",
   country: "ET",
   city: "Addis Ababa",
+  address: "Around CMC Michael, Guji Highland Building",
+  email: "info@nafconstruction.com",
 };
 
 export default siteConfig;

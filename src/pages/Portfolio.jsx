@@ -5,8 +5,8 @@ import PortfolioGrid from "../components/portfolio/PortfolioGrid";
 
 const Portfolio = () => {
   usePageTitle(
-    "Portfolio",
-    "Browse NAF Construction's portfolio of completed residential and commercial projects."
+    "Construction Projects in Ethiopia",
+    "View NAF Construction projects across Ethiopia, including residential, commercial, renovation, institutional, and infrastructure work."
   );
 
   return (

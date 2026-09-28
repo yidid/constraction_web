@@ -20,8 +20,8 @@ const FeaturedProjects = () => {
       <Container>
         <SectionHeading
           eyebrow="Our Work"
-          heading="Featured Projects"
-          subtext="A glimpse into the residential, commercial, and renovation projects we've proudly delivered."
+          heading="Featured Construction Projects in Ethiopia"
+          subtext="Explore selected residential, commercial, institutional, renovation, and infrastructure projects delivered by NAF Construction and Trading."
           centered
         />
 

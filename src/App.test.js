@@ -9,5 +9,7 @@ test('renders the NAF Construction website', () => {
     </ThemeProvider>
   );
 
-  expect(screen.getByRole("heading", { name: /Solid grounds/i })).toBeInTheDocument();
+  expect(
+    screen.getByRole("heading", { name: /Construction built for Ethiopia/i })
+  ).toBeInTheDocument();
 });

@@ -14,7 +14,8 @@ const usePageTitle = (title, description = "") => {
     const siteName = siteConfig.name;
     const pageTitle = title ? `${title} | ${siteName}` : siteName;
     const pageDescription = description || siteConfig.description;
-    const pageUrl = `${siteConfig.url}${window.location.pathname}`;
+    const pagePath = window.location.pathname.replace(/\/$/, "") || "/";
+    const pageUrl = `${siteConfig.url}${pagePath}`;
     document.title = pageTitle;
 
     if (pageDescription) {
@@ -42,6 +43,7 @@ const usePageTitle = (title, description = "") => {
     updateMeta("property", "og:title", pageTitle);
     updateMeta("property", "og:description", pageDescription);
     updateMeta("property", "og:url", pageUrl);
+    updateMeta("property", "og:type", pagePath === "/" ? "website" : "article");
     updateMeta("name", "twitter:title", pageTitle);
     updateMeta("name", "twitter:description", pageDescription);
 
@@ -65,19 +67,40 @@ const usePageTitle = (title, description = "") => {
 
     structuredData.textContent = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "ConstructionBusiness",
+      "@type": ["LocalBusiness", "GeneralContractor"],
+      "@id": `${siteConfig.url}/#business`,
       name: siteConfig.name,
       legalName: siteConfig.legalName,
       url: siteConfig.url,
       description: siteConfig.description,
+      email: siteConfig.email,
       areaServed: {
         "@type": "Country",
         name: "Ethiopia",
       },
       address: {
         "@type": "PostalAddress",
+        streetAddress: siteConfig.address,
         addressLocality: siteConfig.city,
         addressCountry: siteConfig.country,
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Construction Services",
+        itemListElement: [
+          "Residential and Commercial Construction",
+          "Renovation",
+          "Finishing Works",
+          "Structural Work",
+          "Road Construction",
+          "Landscaping",
+        ].map((serviceName) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: serviceName,
+          },
+        })),
       },
     });
   }, [title, description]);

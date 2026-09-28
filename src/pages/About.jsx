@@ -7,8 +7,8 @@ import CoreValues from "../components/about/CoreValues";
 
 const About = () => {
   usePageTitle(
-    "About Us",
-    "Learn about NAF Construction's history, mission, and commitment to quality craftsmanship."
+    "About NAF Construction and Trading",
+    "Learn about NAF Construction and Trading, our project experience, construction capabilities, and commitment to quality workmanship in Ethiopia."
   );
 
   return (

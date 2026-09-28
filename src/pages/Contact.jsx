@@ -5,15 +5,15 @@ import ContactSection from "../components/contact/ContactSection";
 
 const Contact = () => {
   usePageTitle(
-    "Contact Us",
-    "Get in touch with NAF Construction for quotes, inquiries, and project consultations."
+    "Contact a Construction Company in Addis Ababa",
+    "Contact NAF Construction and Trading in Addis Ababa for building, renovation, structural, road construction, landscaping, and project consultations."
   );
 
   return (
     <div>
       <PageHeader
-        title="Contact Us"
-        subtitle="Let's discuss your next project."
+        title="Construction RFQ and Tender Inquiry"
+        subtitle="Send your project brief, tender documents, drawings, BOQ, or material schedule for review."
       />
       <ContactSection />
     </div>

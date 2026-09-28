@@ -5,8 +5,8 @@ import ServicesList from "../components/services/ServicesList";
 
 const Services = () => {
   usePageTitle(
-    "Services",
-    "Explore NAF Construction's residential, commercial, renovation, interior design, architecture, and project management services."
+    "Construction Services in Ethiopia",
+    "Explore NAF Construction services including residential and commercial building, renovation, finishing works, structural work, road construction, and landscaping."
   );
 
   return (

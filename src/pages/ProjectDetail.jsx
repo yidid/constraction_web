@@ -21,8 +21,10 @@ const ProjectDetail = () => {
   const portfolioPath = fromPage ? `/portfolio?page=${fromPage}` : "/portfolio";
 
   usePageTitle(
-    project ? project.title : "Project Not Found",
-    project ? project.description : ""
+    project ? `${project.title} | Construction Project` : "Project Not Found",
+    project
+      ? `${project.description} NAF Construction project in ${project.location}.`.slice(0, 160)
+      : ""
   );
 
   if (loading) {
