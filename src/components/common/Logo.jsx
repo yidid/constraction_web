@@ -9,17 +9,17 @@ import logoImg from "../../assets/images/logo.jpg"; // <-- Make sure to match th
  */
 const Logo = ({ light = false }) => {
   return (
-    <Link to="/" className="flex items-center gap-3 shrink-0">
+    <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3 shrink-0">
       {/* Brand Logo Image */}
       <img
         src={logoImg}
         alt="NAF Construction Logo"
-       className="h-10 w-10 rounded-full object-contain bg-white p-1"
+      className="h-8 w-8 shrink-0 rounded-full object-contain bg-white p-1 sm:h-10 sm:w-10"
       />
 
       {/* Brand Text */}
       <span
-        className={`text-xl font-bold tracking-tight ${
+        className={`min-w-0 text-base font-bold leading-tight tracking-tight sm:text-xl ${
           light ? "text-light" : "text-dark"
         }`}
       >

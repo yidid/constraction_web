@@ -17,6 +17,7 @@
     @apply font-sans text-dark bg-light antialiased transition-colors duration-300;
     font-size: 1.0625rem;
     line-height: 1.65;
+    overflow-x: hidden;
     background-image: linear-gradient(rgba(7, 27, 47, 0.025) 1px, transparent 1px),
       linear-gradient(90deg, rgba(7, 27, 47, 0.025) 1px, transparent 1px);
     background-size: 32px 32px;
@@ -29,6 +30,10 @@
 
   button, a {
     font-family: inherit;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   ::selection {

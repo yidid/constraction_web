@@ -30,7 +30,7 @@ const OurClients = () => {
             <div
               key={`${project.id}-${index}`}
           
-              className="flex items-center justify-center h-40 w-64 px-3 shrink-0 bg-transparent active:bg-transparent focus:bg-transparent"
+              className="flex h-32 w-48 shrink-0 items-center justify-center bg-transparent px-3 active:bg-transparent focus:bg-transparent sm:h-40 sm:w-64"
             >
               {project.image ? (
                 <img
